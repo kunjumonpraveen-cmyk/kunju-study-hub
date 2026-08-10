@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fire Prevention & Protection Systems — Kunju Study Hub</title>
+<style>
+:root{--ink:#080c11;--text:#18232e;--muted:#4d5d6d;--line:#d7dee6;--navy:#071522;--blue:#0b4f8a;--gold:#d89b00;--green:#087443;--red:#b42318}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf1f5;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:18px;line-height:1.75}a{color:var(--blue);font-weight:800}
+.top{position:sticky;top:0;z-index:20;background:#07111d;color:#fff;border-bottom:1px solid #26384b}.topin{max-width:1280px;margin:auto;padding:12px 20px;display:flex;align-items:center}.brand{font-weight:950}.brand small{display:block;color:#b8c8d8;font-size:12px;font-weight:650}.actions{margin-left:auto;display:flex;gap:8px}.actions a,.actions button{color:#fff;background:#102235;border:1px solid #3d5267;border-radius:9px;padding:7px 11px;font-size:13px;font-weight:850;text-decoration:none;cursor:pointer}
+.layout{max-width:1280px;margin:auto;padding:24px 20px 70px;display:grid;grid-template-columns:285px 1fr;gap:24px}aside{position:sticky;top:72px;height:calc(100vh - 92px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}aside h3{margin:0;font-size:16px;color:var(--ink)}aside a{display:block;color:#253342;text-decoration:none;font-size:14px;line-height:1.35;padding:8px;border-radius:8px}aside a:hover{background:#edf4fa}.progress{height:9px;background:#e2e7ed;border-radius:99px;margin:12px 0;overflow:hidden}.progress i{display:block;width:0;height:100%;background:var(--gold)}.small{font-size:13px;color:var(--muted);font-weight:650}
+.hero{background:linear-gradient(135deg,#06131f,#10466e);color:#fff;border-radius:20px;padding:34px;box-shadow:0 12px 35px rgba(10,20,30,.12);margin-bottom:24px}.kicker{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#ffd66a;font-weight:950}h1{font-size:clamp(37px,5vw,66px);line-height:1.03;letter-spacing:-1.7px;margin:10px 0 18px;color:#fff;font-weight:950}.hero p{font-size:20px;line-height:1.7;color:#e4edf5;max-width:920px;font-weight:550}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.stat{background:#102a41;border:1px solid #48637d;border-radius:12px;padding:13px}.stat b{display:block;font-size:22px;color:#fff}.stat span{font-size:12px;color:#c5d5e4;font-weight:650}
+.section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:22px;box-shadow:0 5px 20px rgba(20,30,40,.04)}h2{font-size:clamp(29px,4vw,43px);line-height:1.12;color:var(--ink);margin:0 0 12px;font-weight:950}h3{font-size:25px;line-height:1.2;color:var(--ink);margin:29px 0 10px;font-weight:900}.lead{font-size:20px;color:#263747;font-weight:550}
+.note,.danger,.success{padding:16px 18px;border-radius:0 12px 12px 0;margin:18px 0}.note{background:#fff8df;border-left:6px solid var(--gold)}.danger{background:#fff0ef;border-left:6px solid var(--red)}.success{background:#edf9f3;border-left:6px solid var(--green)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{background:#fbfcfd;border:1px solid var(--line);border-radius:14px;padding:17px}.card b{color:var(--ink);font-weight:950}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:15px}th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left}th{background:#eaf0f5;color:#08131e;font-weight:950}
+details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff}summary{cursor:pointer;padding:15px 17px;color:var(--ink);font-size:18px;font-weight:900}details>div{padding:0 18px 17px}
+.formula{background:#f0f4f7;border:1px solid var(--line);padding:13px 16px;border-radius:11px;font-size:21px;font-weight:950;color:#07121d}.code{background:#101820;color:#e8f1f7;border-radius:11px;padding:16px;overflow:auto;font:14px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}
+.quiz{border:1px solid var(--line);border-radius:13px;background:#fbfcfd;padding:17px;margin:12px 0}.quiz p{font-weight:900;color:var(--ink)}.option{display:block;width:100%;text-align:left;border:1px solid #cbd4de;background:#fff;border-radius:9px;padding:10px 12px;margin:7px 0;cursor:pointer;color:#1c2935;font-weight:600}.option.correct{background:#e6f7ee;border-color:#42a875}.option.wrong{background:#fff0ef;border-color:#d86c64}.answer{display:none;margin-top:9px;font-weight:750}.answer.show{display:block}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}.checklist input{margin-top:7px;transform:scale(1.2)}.footer-nav{display:flex;justify-content:space-between;gap:10px}.footer-nav a{background:var(--blue);color:#fff;padding:11px 15px;border-radius:10px;text-decoration:none}
+@media(max-width:950px){.layout{grid-template-columns:1fr}aside{position:relative;top:auto;height:auto}.stats{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}}@media(max-width:620px){body{font-size:17px}.layout{padding:12px}.section,.hero{padding:21px}.grid2,.stats{grid-template-columns:1fr}.hero p{font-size:18px}.actions a,.actions button{font-size:11px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><div class="brand">KUNJU STUDY HUB<small>Diploma in Safety & Fire Engineering</small></div><div class="actions"><a href="index.html">← Study Hub</a><a href="#quiz">Quiz</a><button onclick="window.print()">Print</button></div></div></header>
+<div class="layout">
+<aside><h3>Subject 03 Navigation</h3><div class="progress"><i id="bar"></i></div><div class="small" id="pt">0% practical checklist</div><hr>
+<a href="#start">1. Start Here</a><a href="#outcomes">2. Learning Outcomes</a><a href="#strategy">3. Protection Strategy</a><a href="#extinguishers">4. Extinguishers</a><a href="#water">5. Hydrant & Water Systems</a><a href="#pumps">6. Fire Pumps</a><a href="#sprinklers">7. Sprinkler Systems</a><a href="#detection">8. Detection & Alarm</a><a href="#passive">9. Passive Protection</a><a href="#egress">10. Emergency Lighting & Egress</a><a href="#inspection">11. Inspection & Maintenance</a><a href="#scenarios">12. Design Scenarios</a><a href="#practical">13. Practical Work</a><a href="#mastery">14. Mastery</a><a href="#quiz">15. Quiz</a><a href="#glossary">16. Glossary</a>
+</aside>
+<main>
+<section class="hero" id="start"><div class="kicker">Subject 03 • From protection principles to system understanding</div><h1>Fire Prevention & Protection Systems</h1><p>Learn how buildings and industrial facilities prevent ignition, detect fire, contain it, suppress it and support safe evacuation. This page connects fire science to real protection systems and teaches you how to recognise components, understand their purpose and inspect them intelligently.</p><div class="stats"><div class="stat"><b>10</b><span>Core system blocks</span></div><div class="stat"><b>60+</b><span>Protection concepts</span></div><div class="stat"><b>12</b><span>Practical exercises</span></div><div class="stat"><b>25</b><span>Mastery questions</span></div></div></section>
+
+<section class="section" id="outcomes"><h2>Learning outcomes</h2><p class="lead">By completion, a student should understand not just what a fire-protection component is, but why it exists, what can make it fail and what evidence demonstrates readiness.</p><div class="grid2">
+<div class="card"><b>Choose protection concepts</b><p>Distinguish active, passive, detection, suppression, containment and life-safety measures.</p></div>
+<div class="card"><b>Understand water systems</b><p>Explain tanks, pumps, hydrants, hose reels, risers, valves and basic water distribution logic.</p></div>
+<div class="card"><b>Understand sprinklers</b><p>Explain sprinkler operation, spacing concepts, water supply and the difference between detection and suppression.</p></div>
+<div class="card"><b>Understand detection</b><p>Explain smoke, heat, flame and gas detection and how alarms communicate a developing fire condition.</p></div>
+<div class="card"><b>Understand passive protection</b><p>Explain compartmentation, fire doors, fire stopping and structural fire resistance.</p></div>
+<div class="card"><b>Inspect systems</b><p>Identify obvious deficiencies, impairment conditions and maintenance issues and know when specialist testing is required.</p></div>
+</div></section>
+
+<section class="section" id="strategy"><h2>1. The fire-protection strategy</h2><p class="lead">A good facility does not depend on one extinguisher or one sprinkler. Fire safety is a layered defence.</p>
+<div class="grid3"><div class="card"><b>Prevent</b><p>Control ignition sources, combustible loading, electrical hazards, hot work and unsafe processes.</p></div><div class="card"><b>Detect</b><p>Recognise smoke, heat, flame or other abnormal conditions early.</p></div><div class="card"><b>Alert</b><p>Transmit an alarm so people and emergency systems can respond.</p></div><div class="card"><b>Contain</b><p>Use walls, floors, doors and fire stopping to limit spread.</p></div><div class="card"><b>Suppress</b><p>Use sprinklers, hydrants, foam or other appropriate systems to control fire.</p></div><div class="card"><b>Escape</b><p>Provide protected routes, exits, emergency lighting and clear evacuation arrangements.</p></div></div>
+<div class="formula">Prevention → Detection → Alarm → Containment → Suppression → Evacuation → Emergency Response</div>
+<div class="note"><b>Engineering principle:</b> A protection system is only as strong as its weakest critical dependency. A sprinkler system with a closed control valve, an alarm with disabled notification appliances or a fire door wedged open can create a major barrier failure.</div>
+</section>
+
+<section class="section" id="extinguishers"><h2>2. Portable fire extinguishers</h2>
+<h3>2.1 Purpose</h3><p>Portable extinguishers provide first-aid firefighting for an incipient fire when the extinguisher is suitable, the user is trained and conditions permit safe intervention. They are not a substitute for fixed protection, emergency planning or evacuation.</p>
+<table><tr><th>Agent / type</th><th>Typical application</th><th>Important limitation</th></tr>
+<tr><td>Water</td><td>Suitable ordinary combustible fires</td><td>Not universally suitable; electrical and water-reactive hazards require care.</td></tr>
+<tr><td>Foam</td><td>Suitable Class A and selected flammable-liquid applications</td><td>Compatibility and application method matter.</td></tr>
+<tr><td>Dry chemical</td><td>Many flammable-liquid/gas and some electrical applications</td><td>Limited cooling; re-ignition can occur.</td></tr>
+<tr><td>CO₂</td><td>Selected electrical and flammable-liquid hazards</td><td>Limited cooling; ineffective for many deep-seated combustibles.</td></tr>
+</table>
+<h3>2.2 Inspection logic</h3><ol><li>Correct type and rating for the hazard.</li><li>Accessible, visible and unobstructed.</li><li>Correct mounting/location according to applicable requirements.</li><li>Pressure/indicator condition where provided.</li><li>Pin, seal, hose/nozzle and body condition.</li><li>No obvious corrosion, leakage or damage.</li><li>Inspection/maintenance status current.</li></ol>
+<div class="danger"><b>Do not train students to fight fires beyond their capability.</b> If smoke is heavy, fire is spreading, the escape route is threatened, or the fuel is unknown, evacuation and emergency response take priority.</div>
+</section>
+
+<section class="section" id="water"><h2>3. Hydrant, hose reel & water distribution systems</h2>
+<h3>3.1 Basic architecture</h3>
+<div class="code">Fire water storage
+       ↓
+Fire pump(s)
+       ↓
+Main fire-water network
+       ↓
+Risers / hydrant mains / branch lines
+       ↓
+Hydrants / hose reels / other outlets
+       ↓
+Hose + nozzle → Firefighting stream</div>
+<h3>3.2 Key components</h3><div class="grid2"><div class="card"><b>Fire water tank</b><p>Provides the required water reserve. Level, accessibility and protection against contamination/freezing where relevant matter.</p></div><div class="card"><b>Isolation valves</b><p>Allow sections to be isolated. Their normal position is critical to system readiness.</p></div><div class="card"><b>Hydrant</b><p>Provides a connection for firefighting hoses in the designed system.</p></div><div class="card"><b>Hose reel</b><p>Provides a permanently arranged hose for initial firefighting where the system is designed for it.</p></div></div>
+<h3>3.3 Pressure and flow</h3><p>Fire-water systems must deliver adequate flow and pressure at the intended outlets. Losses occur through pipe friction, fittings, elevation and other system effects.</p><div class="formula">Pressure available at outlet ≈ Pump pressure − system losses − elevation effects</div>
+<p>Actual design calculations require the applicable code, hydraulic data, pipe characteristics and system configuration. Never treat a simplified formula as a design calculation.</p>
+</section>
+
+<section class="section" id="pumps"><h2>4. Fire pumps</h2><p>Fire pumps provide the pressure and flow required by a fixed water-based fire-protection system. A typical arrangement may include a main electric pump, diesel pump and jockey pump, depending on the installation and applicable requirements.</p>
+<table><tr><th>Pump</th><th>General role</th></tr><tr><td><b>Jockey pump</b></td><td>Maintains system pressure and compensates for small losses without starting the main pump for every minor pressure change.</td></tr><tr><td><b>Electric main pump</b></td><td>Provides substantial flow/pressure when the system demand requires it.</td></tr><tr><td><b>Diesel fire pump</b></td><td>Provides an alternative power source where the system design requires it.</td></tr></table>
+<h3>4.1 Pump-room inspection mindset</h3><ul><li>Is the room accessible and free of unnecessary storage?</li><li>Are pumps, controllers and power/fuel arrangements available?</li><li>Are valves in their required normal positions?</li><li>Is there evidence of leakage, overheating, corrosion or abnormal condition?</li><li>Are gauges readable and plausible?</li><li>Are routine test records available?</li><li>Is there an impairment or isolation notice?</li></ul>
+<div class="note"><b>Important:</b> A pump that runs during a test is not automatically proof that the entire fire-water system is compliant. System performance depends on the complete hydraulic network and required testing regime.</div>
+</section>
+
+<section class="section" id="sprinklers"><h2>5. Automatic sprinkler systems</h2>
+<h3>5.1 How a sprinkler operates</h3><p>Most conventional sprinklers are individually heat operated. A sprinkler head normally does not discharge simply because a smoke detector senses smoke. Heat causes the operating element to activate at its designed temperature condition, allowing water to discharge.</p>
+<div class="code">Fire develops
+   ↓
+Heat accumulates near ceiling
+   ↓
+Sprinkler operating element reaches activation condition
+   ↓
+Individual sprinkler opens
+   ↓
+Water discharges onto fire / hot area
+   ↓
+Flow causes alarm / waterflow indication
+   ↓
+Additional system response as designed</div>
+<h3>5.2 Key components</h3><div class="grid3"><div class="card"><b>Sprinkler head</b><p>Heat-operated discharge device.</p></div><div class="card"><b>Control valve</b><p>Controls water supply to a system or zone and must remain in the required position.</p></div><div class="card"><b>Alarm valve / trim</b><p>Provides system functions and waterflow/alarm arrangements according to system type.</p></div><div class="card"><b>Waterflow switch</b><p>Detects sustained water movement and can initiate alarm signals.</p></div><div class="card"><b>Test & drain</b><p>Allows testing and controlled drainage.</p></div><div class="card"><b>Fire pump</b><p>Supports water supply where required by system design.</p></div></div>
+<h3>5.3 Common sprinkler systems</h3><table><tr><th>System</th><th>Concept</th><th>Typical consideration</th></tr><tr><td>Wet pipe</td><td>Pipe network normally contains water.</td><td>Common where temperatures permit.</td></tr><tr><td>Dry pipe</td><td>Pipe contains pressurised gas until activation releases water.</td><td>Useful where freezing is a concern.</td></tr><tr><td>Pre-action</td><td>Additional detection/control sequence before water enters piping in many designs.</td><td>Used where accidental water discharge has significant consequences.</td></tr><tr><td>Deluge</td><td>Open nozzles; system releases water over an area when activated.</td><td>Used for high-hazard applications requiring rapid application.</td></tr></table>
+<div class="danger"><b>Do not obstruct sprinklers.</b> Storage too close to sprinkler heads, damaged heads, painted heads or changes to ceiling geometry can compromise designed discharge performance.</div>
+</section>
+
+<section class="section" id="detection"><h2>6. Fire detection & alarm systems</h2>
+<h3>6.1 Detection types</h3><div class="grid2"><div class="card"><b>Smoke detectors</b><p>Designed to detect smoke particles using technologies such as photoelectric or ionisation principles, depending on device type.</p></div><div class="card"><b>Heat detectors</b><p>Respond to temperature reaching a threshold or a rapid rate of temperature rise, depending on type.</p></div><div class="card"><b>Flame detectors</b><p>Detect characteristic optical radiation from flames; useful in selected industrial hazards.</p></div><div class="card"><b>Gas detectors</b><p>Detect specific gases or vapours; commonly important for flammable or toxic gas hazards.</p></div></div>
+<h3>6.2 Alarm chain</h3><div class="formula">Detector → Fire Alarm Control Panel → Notification / Indication → Emergency Response</div>
+<p>Modern systems may also transmit signals to remote monitoring, building management systems, smoke control systems, elevators, access control or other interfaces where designed.</p>
+<h3>6.3 False alarms</h3><p>Repeated unwanted alarms should not simply be silenced. Identify environmental causes, detector selection, contamination, cooking vapour, dust, steam, system design and maintenance issues.</p>
+</section>
+
+<section class="section" id="passive"><h2>7. Passive fire protection</h2><p>Passive protection does not normally require active operation at the moment of fire. It is built into the building or process environment to resist or limit fire spread.</p>
+<div class="grid3"><div class="card"><b>Compartmentation</b><p>Fire-resisting walls/floors divide a building into zones.</p></div><div class="card"><b>Fire doors</b><p>Maintain compartment boundaries when correctly installed, closed and maintained.</p></div><div class="card"><b>Fire stopping</b><p>Seals penetrations and joints so services do not create hidden fire paths.</p></div><div class="card"><b>Structural protection</b><p>Protects structural members against heat exposure for the required performance.</p></div><div class="card"><b>Fire-rated glazing</b><p>Provides a controlled opening while maintaining specified fire performance.</p></div><div class="card"><b>Dampers</b><p>Can limit fire/smoke spread through ventilation systems where designed and maintained.</p></div></div>
+<div class="note"><b>Common failure:</b> A fire-rated wall is only as effective as its penetrations. An unprotected cable tray, pipe or poorly sealed opening can undermine the compartment boundary.</div>
+</section>
+
+<section class="section" id="egress"><h2>8. Emergency lighting, exits & life safety</h2>
+<h3>8.1 Means of escape</h3><p>Fire protection is not only about extinguishing fire. People need a reliable path from occupied spaces to a place of safety. Egress design involves travel distance, number and width of exits, exit separation, protected stairs, doors, signage and occupancy.</p>
+<h3>8.2 Emergency lighting</h3><p>Emergency lighting supports visibility when normal power fails. It should be positioned and maintained so occupants can identify routes, changes in level, exits and essential safety equipment as required by the applicable standard.</p>
+<h3>8.3 Door and corridor discipline</h3><ul><li>Do not wedge fire doors open unless the system is specifically designed and approved for controlled hold-open operation.</li><li>Do not store materials in escape routes.</li><li>Keep exits unlocked and available as required during occupancy.</li><li>Maintain clear signage and emergency lighting.</li></ul>
+</section>
+
+<section class="section" id="inspection"><h2>9. Inspection, testing & maintenance</h2><p class="lead">A protection system is not “installed and finished.” Readiness is maintained through inspection, testing, maintenance, records and impairment management.</p>
+<table><tr><th>Layer</th><th>Purpose</th><th>Example</th></tr><tr><td>Inspection</td><td>Look for condition/readiness issues.</td><td>Valve position, damage, obstruction.</td></tr><tr><td>Testing</td><td>Operate or measure a function.</td><td>Alarm test, pump test, flow test.</td></tr><tr><td>Maintenance</td><td>Restore or preserve performance.</td><td>Repair valve, replace detector, service pump.</td></tr><tr><td>Records</td><td>Demonstrate what was done and identify trends.</td><td>Test certificates, logs, defect reports.</td></tr></table>
+<h3>9.1 Impairment management</h3><p>If a sprinkler system, fire pump, alarm system or critical fire barrier is unavailable, the situation should be treated as an impairment. The facility needs a defined process for notification, risk assessment, temporary measures, responsible persons and restoration.</p>
+<div class="danger"><b>Never conceal an impairment.</b> A disabled protection system is a change in risk and should trigger the site's approved impairment procedure.</div>
+</section>
+
+<section class="section" id="scenarios"><h2>10. Design and inspection scenarios</h2>
+<details open><summary>Scenario A — Sprinkler valve found closed</summary><div><p>This is potentially a critical impairment. Verify which system is affected, prevent unauthorised operation of the valve, notify responsible personnel, follow impairment procedures and restore the system as soon as safely possible.</p></div></details>
+<details><summary>Scenario B — Fire pump starts repeatedly every few minutes</summary><div><p>Do not assume this is normal. Investigate pressure loss, leakage, valve condition, test arrangements and controller settings. Frequent cycling can indicate a system defect.</p></div></details>
+<details><summary>Scenario C — Fire door permanently wedged open</summary><div><p>The door may no longer provide the intended compartmentation. Identify why it is held open. If operational access requires an open door, a compliant hold-open arrangement may be needed rather than an improvised wedge.</p></div></details>
+<details><summary>Scenario D — Storage stacked close beneath sprinklers</summary><div><p>Storage arrangement can interfere with sprinkler discharge and heat collection. Check the applicable design criteria, commodity classification, storage height and required clearances rather than relying on a generic distance.</p></div></details>
+</section>
+
+<section class="section" id="practical"><h2>11. Practical competency exercises</h2><div class="checklist">
+<label><input type="checkbox" data-task> Identify and label the components of a typical fire-water system.</label>
+<label><input type="checkbox" data-task> Inspect five portable extinguishers using an approved checklist.</label>
+<label><input type="checkbox" data-task> Trace a hydrant system from tank to outlet.</label>
+<label><input type="checkbox" data-task> Identify jockey, electric and diesel pump functions.</label>
+<label><input type="checkbox" data-task> Identify sprinkler system components from photographs or a live installation.</label>
+<label><input type="checkbox" data-task> Explain wet, dry, pre-action and deluge systems.</label>
+<label><input type="checkbox" data-task> Identify smoke, heat and flame detector types.</label>
+<label><input type="checkbox" data-task> Inspect fire doors and identify defects.</label>
+<label><input type="checkbox" data-task> Conduct a compartmentation survey for penetrations.</label>
+<label><input type="checkbox" data-task> Perform a basic emergency-exit inspection.</label>
+<label><input type="checkbox" data-task> Review a sample fire-system impairment scenario.</label>
+<label><input type="checkbox" data-task> Prepare a fire-protection inspection report with evidence and corrective actions.</label>
+</div></section>
+
+<section class="section" id="mastery"><h2>12. Mastery standard</h2><div class="grid2">
+<div class="card"><b>Systems</b><ul><li>Explain active vs passive protection.</li><li>Trace a basic fire-water system.</li><li>Explain sprinkler operation.</li></ul></div>
+<div class="card"><b>Detection</b><ul><li>Differentiate detector types.</li><li>Explain alarm-chain logic.</li><li>Recognise common unwanted-alarm causes.</li></ul></div>
+<div class="card"><b>Life safety</b><ul><li>Inspect exits and emergency lighting.</li><li>Understand compartmentation.</li><li>Recognise fire-door defects.</li></ul></div>
+<div class="card"><b>Readiness</b><ul><li>Understand inspection/testing/maintenance.</li><li>Recognise impairments.</li><li>Understand why records matter.</li></ul></div>
+</div><div class="success"><b>Mastery test:</b> Given a building or industrial facility, you should be able to describe its layers of protection, identify critical components, recognise obvious impairment conditions and explain what evidence would be needed to demonstrate system readiness.</div></section>
+
+<section class="section" id="quiz"><h2>25-question mastery quiz</h2><p class="lead">Select one answer per question, then grade the quiz.</p><div id="quizBox"></div><button onclick="gradeQuiz()" style="background:#0b4f8a;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;cursor:pointer">Grade Quiz</button><div id="score" class="success" style="display:none;margin-top:16px"></div></section>
+
+<section class="section" id="glossary"><h2>Essential glossary</h2><div class="grid3">
+<div class="card"><b>Alarm valve</b><p>Valve arrangement used in certain water-based systems to control and signal water flow.</p></div><div class="card"><b>Compartmentation</b><p>Division of a building into fire-resisting compartments to limit fire and smoke spread.</p></div><div class="card"><b>Fire door</b><p>Door assembly designed and tested to provide specified fire resistance.</p></div><div class="card"><b>Fire pump</b><p>Pump used to provide required water flow/pressure for fire-protection systems.</p></div><div class="card"><b>Impairment</b><p>Condition where a fire-protection system or barrier is unavailable or degraded.</p></div><div class="card"><b>Jockey pump</b><p>Small pump used to maintain system pressure and compensate for minor losses.</p></div><div class="card"><b>Sprinkler</b><p>Heat-operated device that releases water in a designed pattern when activated.</p></div><div class="card"><b>Waterflow switch</b><p>Device that detects water movement and can initiate a signal.</p></div><div class="card"><b>Fire stopping</b><p>Measures that maintain fire-resistance around penetrations, joints and service openings.</p></div>
+</div></section>
+
+<section class="section"><h2>Next subject</h2><p class="lead">Next comes Occupational Health & Industrial Hygiene: noise, heat stress, chemicals, ergonomics, radiation, exposure concepts and PPE selection.</p><div class="footer-nav"><a href="index.html">← Study Hub</a><a href="#start">↑ Back to top</a></div></section>
+</main></div>
+
+<script>
+const qs=[
+["The main purpose of a fire-protection strategy is to:","Provide layered prevention, detection, containment, suppression and life-safety measures",["Provide only extinguishers","Provide layered prevention, detection, containment, suppression and life-safety measures","Replace emergency planning","Eliminate all risk"]],
+["A portable extinguisher is primarily intended for:","Incipient fires when conditions permit safe intervention",["Any size fire","Incipient fires when conditions permit safe intervention","Structural firefighting only","Replacing sprinklers"]],
+["A jockey pump generally:","Maintains system pressure and compensates for small losses",["Replaces all fire pumps","Maintains system pressure and compensates for small losses","Supplies domestic drinking water","Only tests alarms"]],
+["A sprinkler head normally operates because:","Its heat-operated element reaches its activation condition",["A smoke detector always opens every sprinkler","Its heat-operated element reaches its activation condition","A person presses a button","The fire alarm panel opens all heads"]],
+["A wet-pipe sprinkler system normally contains:","Water in the distribution piping",["Compressed air only","Water in the distribution piping","Foam only","CO2"]],
+["A deluge system commonly uses:","Open discharge devices with water released over an area when the system actuates",["Only closed sprinklers","Open discharge devices with water released over an area when the system actuates","No water supply","Only portable extinguishers"]],
+["A fire alarm control panel primarily:","Receives/processes signals and controls indications and outputs as designed",["Stores extinguishers","Receives/processes signals and controls indications and outputs as designed","Supplies hydrant water","Replaces fire doors"]],
+["Which is passive fire protection?","Compartment wall",["Fire pump","Compartment wall","Portable extinguisher","Alarm horn"]],
+["Fire stopping is important because:","Service penetrations can compromise fire-resisting barriers",["It increases fuel load","Service penetrations can compromise fire-resisting barriers","It replaces sprinklers","It cools pumps"]],
+["An impairment means:","A protection system or barrier is unavailable or degraded",["A completed inspection","A protection system or barrier is unavailable or degraded","A normal alarm test","A new fire extinguisher"]],
+["Why are fire doors important?","They help maintain compartmentation when correctly installed and maintained",["They are decorative","They help maintain compartmentation when correctly installed and maintained","They increase smoke spread","They replace emergency lighting"]],
+["Which is a fire-detection device?","Heat detector",["Hydrant valve","Heat detector","Fire hose","Pump controller only"]],
+["A waterflow switch can:","Detect water movement and initiate a signal",["Stop all fires automatically","Detect water movement and initiate a signal","Replace a sprinkler head","Measure building occupancy"]],
+["A fire pump system should be evaluated as:","A complete system including water source, pumps, valves, network and outlets",["Only the pump motor","A complete system including water source, pumps, valves, network and outlets","Only the pressure gauge","Only the tank"]],
+["Why should sprinkler heads not be obstructed?","Obstructions can interfere with intended heat response and water distribution",["They look untidy","Obstructions can interfere with intended heat response and water distribution","They make alarms louder","They reduce tank capacity"]],
+["CO2 extinguishers are generally limited against deep-seated combustibles because:","They provide limited cooling and may allow re-ignition",["They contain water","They provide limited cooling and may allow re-ignition","They always freeze the fuel","They create foam"]],
+["A fire-protection inspection should look for:","Condition, accessibility, impairment and obvious defects",["Only paint colour","Condition, accessibility, impairment and obvious defects","Only the building age","Only employee attendance"]],
+["Testing differs from inspection because testing:","Operates or measures a function to verify performance",["Never uses equipment","Operates or measures a function to verify performance","Only checks paperwork","Is only visual"]],
+["Why are records important?","They demonstrate actions, reveal trends and support assurance",["They are only paperwork","They demonstrate actions, reveal trends and support assurance","They replace testing","They prevent all failures"]],
+["A closed sprinkler control valve can indicate:","A potentially serious impairment",["Normal operation in every system","A potentially serious impairment","A better water supply","A detector fault only"]],
+["Emergency lighting supports:","Visibility and identification of escape routes and safety features during normal-power failure",["Fire suppression","Visibility and identification of escape routes and safety features during normal-power failure","Pump pressure","Fuel isolation"]],
+["A fire door wedged open can:","Compromise the intended fire compartment boundary",["Improve compartmentation","Compromise the intended fire compartment boundary","Increase pump pressure","Test smoke detectors"]],
+["The best response to an impairment is to:","Follow the approved impairment procedure and restore protection promptly",["Hide it","Follow the approved impairment procedure and restore protection promptly","Ignore it","Remove the alarm record"]],
+["Fire protection should be designed around:","The actual hazard, occupancy, fuel, fire scenario and applicable requirements",["Only building appearance","The actual hazard, occupancy, fuel, fire scenario and applicable requirements","Only extinguisher colour","Only the cheapest equipment"]],
+["A system can fail even when equipment is installed because:","Valves, power, maintenance, inspection, configuration or other dependencies can be inadequate",["Installed equipment can never fail","Valves, power, maintenance, inspection, configuration or other dependencies can be inadequate","Only weather causes failure","Fire alarms never need testing"]]
+];
+const box=document.getElementById("quizBox");
+qs.forEach((q,i)=>{let d=document.createElement("div");d.className="quiz";d.innerHTML=`<p>${i+1}. ${q[0]}</p>`+q[2].map((o,j)=>`<button class="option" data-q="${i}" data-a="${j}" onclick="pick(this)">${String.fromCharCode(65+j)}. ${o}</button>`).join("")+`<div class="answer" id="a${i}">Correct answer: ${q[1]}</div>`;box.appendChild(d)});
+function pick(b){let q=+b.dataset.q;document.querySelectorAll(`[data-q="${q}"]`).forEach(x=>x.classList.remove("correct","wrong"));let a=+b.dataset.a;if(qs[q][2][a]===qs[q][1])b.classList.add("correct");else b.classList.add("wrong");document.getElementById("a"+q).classList.add("show")}
+function gradeQuiz(){let s=0;qs.forEach((q,i)=>{if(document.querySelector(`[data-q="${i}"].correct`))s++});let p=Math.round(s/qs.length*100),e=document.getElementById("score");e.style.display="block";e.innerHTML=`<b>Score: ${s}/${qs.length} (${p}%)</b><br>${p>=80?"Strong foundation in fire protection systems.":p>=60?"Good start. Review weak areas and try again.":"Review the material before progressing."}`;e.scrollIntoView({behavior:"smooth",block:"center"})}
+const tasks=[...document.querySelectorAll("[data-task]")];function progress(){let d=tasks.filter(x=>x.checked).length,p=Math.round(d/tasks.length*100);document.getElementById("bar").style.width=p+"%";document.getElementById("pt").textContent=p+"% practical checklist";localStorage.setItem("kunju-fire-protection-03",JSON.stringify(tasks.map(x=>x.checked)))}try{let s=JSON.parse(localStorage.getItem("kunju-fire-protection-03")||"[]");tasks.forEach((x,i)=>x.checked=!!s[i])}catch(e){}tasks.forEach(x=>x.addEventListener("change",progress));progress();
+</script>
+</body>
+</html>
