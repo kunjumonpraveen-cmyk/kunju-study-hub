@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fundamentals of Industrial Safety — Study Hub</title>
+<style>
+:root{
+  --ink:#0a0d12;--text:#17202b;--muted:#4b5a6a;--line:#d8dee6;
+  --paper:#ffffff;--soft:#f3f6f9;--blue:#0b4f8a;--blue2:#083b68;
+  --gold:#d89b00;--green:#087443;--red:#b42318;
+  --shadow:0 12px 35px rgba(10,20,30,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eef2f6;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:18px;line-height:1.75}
+a{color:var(--blue);font-weight:750}
+button{font:inherit}
+.top{position:sticky;top:0;z-index:50;background:#07111d;color:#fff;border-bottom:1px solid #26384b}
+.top-inner{max-width:1280px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:14px}
+.brand{font-weight:900;letter-spacing:.3px}
+.brand small{display:block;font-size:12px;color:#b8c8d8;font-weight:600}
+.top-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.top-actions a,.top-actions button{border:1px solid #3c5268;background:#102235;color:#fff;text-decoration:none;border-radius:10px;padding:7px 11px;font-size:13px;font-weight:800;cursor:pointer}
+.layout{max-width:1280px;margin:auto;display:grid;grid-template-columns:285px 1fr;gap:24px;padding:24px 20px 70px}
+aside{position:sticky;top:72px;height:calc(100vh - 92px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+aside h3{margin:0 0 10px;color:var(--ink);font-size:16px}
+aside a{display:block;text-decoration:none;color:#253342;font-size:14px;padding:8px 9px;border-radius:8px;line-height:1.35}
+aside a:hover{background:#edf4fa}
+.progress{height:9px;background:#e3e8ee;border-radius:999px;overflow:hidden;margin:10px 0}
+.progress i{display:block;width:0;height:100%;background:var(--gold);transition:.2s}
+.main{min-width:0}
+.hero{background:linear-gradient(135deg,#071522,#103d62);color:#fff;border-radius:20px;padding:34px;box-shadow:var(--shadow);margin-bottom:24px}
+.kicker{font-size:13px;font-weight:900;letter-spacing:2px;color:#ffd66a;text-transform:uppercase}
+h1{font-size:clamp(36px,5vw,64px);line-height:1.04;margin:10px 0 18px;color:#fff;font-weight:950;letter-spacing:-1.5px}
+.hero p{font-size:20px;color:#e5edf5;max-width:920px;margin:0 0 20px;font-weight:550}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.stat{border:1px solid #48627b;background:#102a41;border-radius:13px;padding:14px}
+.stat b{display:block;font-size:22px;color:#fff}.stat span{font-size:12px;color:#c5d4e2;font-weight:650}
+.section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:22px;box-shadow:0 5px 20px rgba(20,30,40,.04)}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.15;color:var(--ink);margin:0 0 12px;font-weight:950;letter-spacing:-.7px}
+h3{font-size:24px;line-height:1.25;color:var(--ink);margin:28px 0 10px;font-weight:900}
+h4{font-size:19px;color:#10283e;margin:22px 0 7px;font-weight:900}
+p,li{font-weight:500}
+.lead{font-size:20px;color:#263747}
+.note{background:#fff8df;border-left:6px solid var(--gold);padding:16px 18px;border-radius:0 12px 12px 0;margin:18px 0}
+.note strong{color:#5a4300}
+.danger{background:#fff0ef;border-left:6px solid var(--red);padding:16px 18px;border-radius:0 12px 12px 0}
+.success{background:#edf9f3;border-left:6px solid var(--green);padding:16px 18px;border-radius:0 12px 12px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fbfcfd}
+.card b{color:var(--ink);font-weight:900}
+.tag{display:inline-block;background:#e9f1f8;color:#0b4f8a;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:900;margin:3px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top;text-align:left}
+th{background:#eaf0f5;color:#0b1723;font-weight:900}
+details{border:1px solid var(--line);border-radius:13px;margin:10px 0;background:#fff}
+summary{cursor:pointer;padding:15px 17px;color:var(--ink);font-weight:900;font-size:18px}
+details>div{padding:0 18px 17px}
+.code{background:#101820;color:#eaf2f8;border-radius:12px;padding:17px;overflow:auto;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px;line-height:1.65}
+.formula{font-size:22px;font-weight:900;background:#f1f5f8;border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin:12px 0;color:#09141f}
+.quiz{border:1px solid var(--line);border-radius:14px;padding:18px;margin:13px 0;background:#fbfcfd}
+.quiz p{font-weight:900;color:var(--ink)}
+.option{display:block;width:100%;text-align:left;border:1px solid #cbd4de;background:#fff;border-radius:9px;padding:10px 12px;margin:7px 0;cursor:pointer;color:#1c2935;font-weight:600}
+.option:hover{background:#f1f6fa}
+.option.correct{background:#e7f7ef;border-color:#42a875}.option.wrong{background:#fff0ef;border-color:#d86c64}
+.answer{display:none;margin-top:10px;font-weight:700}.answer.show{display:block}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+.checklist input{margin-top:7px;transform:scale(1.2)}
+.flash{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.flash .card{min-height:120px}
+.footer-nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.footer-nav a{display:inline-block;padding:11px 15px;background:#0b4f8a;color:#fff;border-radius:10px;text-decoration:none}
+.small{font-size:14px;color:var(--muted)}
+@media(max-width:950px){.layout{grid-template-columns:1fr}aside{position:relative;top:auto;height:auto}.hero-grid{grid-template-columns:1fr 1fr}.grid3,.flash{grid-template-columns:1fr}}
+@media(max-width:620px){body{font-size:17px}.layout{padding:12px}.section{padding:20px}.hero{padding:24px}.hero-grid,.grid2{grid-template-columns:1fr}.top-inner{padding:10px 12px}.top-actions a{font-size:12px}table{font-size:14px}.hero p{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">KUNJU STUDY HUB<small>Diploma in Safety & Fire Engineering</small></div>
+    <div class="top-actions">
+      <a href="index.html">← Study Hub</a>
+      <a href="#quiz">Quiz</a>
+      <button onclick="window.print()">Print / PDF</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+<aside>
+  <h3>Subject 01 Navigation</h3>
+  <div class="progress"><i id="bar"></i></div>
+  <div class="small" id="progressText">0% completed</div>
+  <hr>
+  <a href="#start">1. Start Here</a>
+  <a href="#outcomes">2. Learning Outcomes</a>
+  <a href="#mindset">3. Safety Mindset</a>
+  <a href="#unit1">4. Unit I — Foundations</a>
+  <a href="#unit2">5. Unit II — Hazard Identification</a>
+  <a href="#unit3">6. Unit III — Risk Assessment</a>
+  <a href="#unit4">7. Unit IV — Safety Management</a>
+  <a href="#unit5">8. Unit V — Practical Safety</a>
+  <a href="#tools">9. Core Tools</a>
+  <a href="#cases">10. Case Studies</a>
+  <a href="#field">11. Field Exercises</a>
+  <a href="#mastery">12. Mastery Checklist</a>
+  <a href="#quiz">13. Assessment Quiz</a>
+  <a href="#glossary">14. Glossary</a>
+</aside>
+
+<main class="main">
+<section class="hero" id="start">
+  <div class="kicker">Subject 01 • From zero to professional practice</div>
+  <h1>Fundamentals of Industrial Safety</h1>
+  <p>This is not a chapter summary. It is a structured learning path designed to take a beginner from the basic meaning of safety to the point where they can identify hazards, assess risk, select controls, conduct inspections, investigate incidents and communicate safety requirements professionally.</p>
+  <div class="hero-grid">
+    <div class="stat"><b>5</b><span>Core learning units</span></div>
+    <div class="stat"><b>40+</b><span>Professional concepts</span></div>
+    <div class="stat"><b>12</b><span>Field exercises</span></div>
+    <div class="stat"><b>25</b><span>Mastery questions</span></div>
+  </div>
+</section>
+
+<section class="section" id="outcomes">
+<h2>What you should be able to do</h2>
+<p class="lead">By the end of this subject, you should think like a safety practitioner rather than someone who has simply memorised definitions.</p>
+<div class="grid2">
+<div class="card"><b>Recognise hazards</b><p>Identify energy sources, unsafe conditions, unsafe acts, exposure pathways and conditions that can produce injury, illness, fire, environmental harm or asset loss.</p></div>
+<div class="card"><b>Assess risk</b><p>Estimate the significance of risk using likelihood, consequence and exposure, while recognising the limitations of simple risk matrices.</p></div>
+<div class="card"><b>Select controls</b><p>Apply the hierarchy of controls and distinguish elimination/substitution/engineering controls from weaker administrative and PPE controls.</p></div>
+<div class="card"><b>Inspect workplaces</b><p>Plan and conduct a meaningful safety inspection, record evidence, identify root issues and assign corrective actions.</p></div>
+<div class="card"><b>Communicate</b><p>Deliver toolbox talks, write clear observations, explain controls to workers and escalate serious hazards without ambiguity.</p></div>
+<div class="card"><b>Investigate</b><p>Separate immediate causes from underlying and organisational causes and develop corrective actions that address system weaknesses.</p></div>
+</div>
+</section>
+
+<section class="section" id="mindset">
+<h2>The safety mindset</h2>
+<p>Industrial safety is the systematic management of hazards and risk. It is not simply “being careful”, wearing PPE or stopping work whenever something looks dangerous.</p>
+<div class="note"><strong>Core principle:</strong> A good safety professional does not ask only “Who made the mistake?” They ask “What conditions, systems, decisions, controls and incentives allowed the event to become possible?”</div>
+<h3>Safety, hazard and risk are different</h3>
+<table>
+<tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><b>Hazard</b></td><td>A source or situation with potential to cause harm.</td><td>Stored LPG, rotating machinery, exposed live conductor.</td></tr>
+<tr><td><b>Risk</b></td><td>The combination of likelihood and consequence of harm occurring.</td><td>Likelihood of an LPG release igniting and the possible consequences.</td></tr>
+<tr><td><b>Control</b></td><td>A measure intended to eliminate or reduce risk.</td><td>Isolation, guarding, ventilation, procedure or PPE.</td></tr>
+<tr><td><b>Incident</b></td><td>An event that resulted in or could have resulted in harm/loss.</td><td>A dropped load that misses a worker.</td></tr>
+<tr><td><b>Accident</b></td><td>Commonly used for an unwanted event causing injury, damage or loss; terminology varies by system.</td><td>Worker injured by falling material.</td></tr>
+<tr><td><b>Near miss</b></td><td>An event with no actual harm but credible potential for harm.</td><td>A worker nearly struck by a reversing vehicle.</td></tr>
+</table>
+<h3>Three questions to ask at any workplace</h3>
+<ol>
+<li><b>What can hurt someone?</b> Identify the hazard and the exposed people.</li>
+<li><b>How could it happen?</b> Understand the initiating event, pathway and escalation.</li>
+<li><b>What prevents it?</b> Identify existing controls and test whether they are reliable in real conditions.</li>
+</ol>
+</section>
+
+<section class="section" id="unit1">
+<h2>Unit I — Foundations of Industrial Safety</h2>
+<p class="lead">Build the vocabulary and mental models used by safety professionals.</p>
+
+<h3>1.1 Why industrial safety exists</h3>
+<p>Industrial activity converts energy and materials into useful products and services. The same energy that makes industry productive can injure people when it is uncontrolled. Mechanical motion, electricity, pressure, heat, chemicals, gravity, radiation, vehicles and stored energy are all potential sources of harm.</p>
+<div class="grid3">
+<div class="card"><b>People</b><p>Prevent fatality, injury, occupational disease and unnecessary exposure.</p></div>
+<div class="card"><b>Process</b><p>Prevent loss of containment, fires, explosions, uncontrolled releases and process upsets.</p></div>
+<div class="card"><b>Assets & environment</b><p>Reduce property damage, production loss, pollution and business interruption.</p></div>
+</div>
+
+<h3>1.2 Accident causation</h3>
+<p>Serious events rarely have one simple cause. A useful investigation moves backward from the event through immediate causes, contributing factors and underlying system weaknesses.</p>
+<details><summary>Swiss Cheese model — understand the idea</summary><div><p>Organisational defences can be imagined as several layers. Each layer has weaknesses or “holes”. An accident occurs when holes temporarily align and a hazard passes through multiple failed or inadequate barriers.</p><p>Use this model to avoid blaming the last person in the chain. Ask why the barrier failed, why it was weak, and why the organisation allowed that weakness to persist.</p></div></details>
+<details><summary>Domino theory</summary><div><p>Older accident models describe events as a sequence where one failure contributes to the next. Modern practice usually treats accidents as more complex, but the basic lesson remains useful: remove or strengthen critical links in the causal chain.</p></div></details>
+<details><summary>Human error — don't stop the investigation here</summary><div><p>Human error can be a symptom rather than a root cause. Examine workload, training, interface design, supervision, procedure quality, fatigue, time pressure, equipment condition and organisational priorities before concluding that “operator error” explains the event.</p></div></details>
+
+<h3>1.3 Unsafe act vs unsafe condition</h3>
+<table>
+<tr><th>Unsafe act</th><th>Unsafe condition</th><th>Better investigation question</th></tr>
+<tr><td>Bypassing a guard</td><td>Guard design makes access difficult</td><td>Why was bypassing possible and why was the guard not effective?</td></tr>
+<tr><td>Walking under a suspended load</td><td>Pedestrian route crosses lifting area</td><td>Why is the traffic interface designed this way?</td></tr>
+<tr><td>Not wearing eye protection</td><td>Wrong PPE issued / poor availability</td><td>Was suitable PPE selected, supplied and enforced?</td></tr>
+</table>
+
+<h3>1.4 Safety culture and leadership</h3>
+<p>Safety culture is reflected in what an organisation actually rewards, tolerates, prioritises and learns from—not merely what its policy says. A strong culture encourages reporting, learns from weak signals and treats serious hazards consistently even when production pressure exists.</p>
+<div class="success"><b>Professional test:</b> If a procedure says one thing but the normal work practice says another, the gap is a safety finding worth investigating.</div>
+
+<h3>1.5 Incident and near-miss reporting</h3>
+<p>A good report is factual, timely and specific. Separate <b>observation</b> from <b>interpretation</b>.</p>
+<div class="code">Observation:
+"At 10:20, a worker was observed using an angle grinder without the side handle installed."
+
+Interpretation:
+"The task may have increased the probability of loss of control."
+
+Action:
+"Stop the task, restore the manufacturer-required handle, inspect the tool and verify pre-use inspection requirements."</div>
+</section>
+
+<section class="section" id="unit2">
+<h2>Unit II — Hazard Identification</h2>
+<p class="lead">Learn to systematically find what can cause harm before it becomes an incident.</p>
+
+<h3>2.1 Hazard families</h3>
+<div class="grid2">
+<div class="card"><b>Physical</b><p>Noise, vibration, heat, cold, radiation, pressure, illumination and mechanical energy.</p></div>
+<div class="card"><b>Chemical</b><p>Flammable, toxic, corrosive, oxidising, reactive, carcinogenic or otherwise hazardous substances.</p></div>
+<div class="card"><b>Biological</b><p>Microorganisms, biological agents, contaminated materials and occupational infection hazards.</p></div>
+<div class="card"><b>Ergonomic</b><p>Manual handling, awkward posture, repetition, force, workstation design and fatigue.</p></div>
+<div class="card"><b>Electrical</b><p>Shock, arc flash, arc blast, thermal effects, static electricity and electrical ignition sources.</p></div>
+<div class="card"><b>Fire & explosion</b><p>Fuel, oxidiser, ignition, confinement, pressure, dust clouds, vapour clouds and escalation pathways.</p></div>
+</div>
+
+<h3>2.2 Energy-based hazard identification</h3>
+<p>One powerful approach is to ask what energy exists in the task and how that energy could be released unexpectedly.</p>
+<table>
+<tr><th>Energy</th><th>Examples</th><th>Potential consequence</th><th>Typical controls</th></tr>
+<tr><td>Gravity</td><td>Suspended load, elevated platform</td><td>Crush / struck-by</td><td>Exclusion zone, lifting controls, guardrails</td></tr>
+<tr><td>Electrical</td><td>Live conductor, capacitor</td><td>Shock / arc</td><td>Isolation, verification, guarding</td></tr>
+<tr><td>Pressure</td><td>Compressed gas, steam</td><td>Rupture / projectile</td><td>Design protection, isolation, inspection</td></tr>
+<tr><td>Mechanical</td><td>Rotating shaft, stored spring</td><td>Entanglement / impact</td><td>Guarding, interlock, isolation</td></tr>
+<tr><td>Chemical</td><td>Toxic vapour, corrosive liquid</td><td>Exposure / fire</td><td>Substitution, containment, ventilation</td></tr>
+<tr><td>Thermal</td><td>Hot surface, molten material</td><td>Burn / ignition</td><td>Insulation, guarding, separation</td></tr>
+</table>
+
+<h3>2.3 Hazard identification techniques</h3>
+<details><summary>Workplace inspection</summary><div><p>Walk the workplace systematically. Observe conditions, behaviours, equipment, access, housekeeping, emergency arrangements and interactions between people and plant.</p></div></details>
+<details><summary>Job Safety Analysis / Job Hazard Analysis</summary><div><p>Break a job into logical steps, identify hazards at each step and define controls. Avoid making steps so broad that hazards disappear inside vague wording.</p></div></details>
+<details><summary>HAZID</summary><div><p>A structured multidisciplinary method for identifying hazards associated with a facility, process, project or activity, usually at an early stage.</p></div></details>
+<details><summary>What-if analysis</summary><div><p>Ask structured “What if…?” questions: What if containment fails? What if power is lost? What if a valve is left open? What if a detector fails?</p></div></details>
+
+<h3>2.4 Exposure and people at risk</h3>
+<p>A hazard without exposure may represent little immediate risk. Identify <b>who</b> can be exposed, <b>how</b>, <b>how often</b>, and whether vulnerable or unfamiliar persons could be affected.</p>
+<ul>
+<li>Employees and contractors</li>
+<li>Visitors and members of the public</li>
+<li>Maintenance and emergency personnel</li>
+<li>Young or inexperienced workers</li>
+<li>Workers performing non-routine tasks</li>
+</ul>
+</section>
+
+<section class="section" id="unit3">
+<h2>Unit III — Risk Assessment</h2>
+<p class="lead">Turn hazard information into decisions about what must be controlled first.</p>
+
+<h3>3.1 Risk assessment workflow</h3>
+<div class="grid3">
+<div class="card"><b>1 — Prepare</b><p>Define scope, task, location, people, equipment and available information.</p></div>
+<div class="card"><b>2 — Identify</b><p>Find hazards, initiating events, exposures and possible consequences.</p></div>
+<div class="card"><b>3 — Evaluate</b><p>Estimate risk and compare it with organisational criteria.</p></div>
+<div class="card"><b>4 — Control</b><p>Select controls using the hierarchy of controls.</p></div>
+<div class="card"><b>5 — Implement</b><p>Assign owners, resources, deadlines and verification.</p></div>
+<div class="card"><b>6 — Review</b><p>Reassess after changes, incidents, new information or periodic review.</p></div>
+</div>
+
+<h3>3.2 Likelihood and consequence</h3>
+<p>A simple qualitative matrix often represents risk as:</p>
+<div class="formula">Risk ≈ Likelihood × Consequence</div>
+<p>This is a useful communication model, not a law of physics. Risk matrices can create false precision if their categories are poorly defined.</p>
+<table>
+<tr><th>Likelihood</th><th>Interpretation</th></tr>
+<tr><td>Rare</td><td>Highly unlikely under defined conditions, but not necessarily impossible.</td></tr>
+<tr><td>Unlikely</td><td>Could occur but is not expected during normal operations.</td></tr>
+<tr><td>Possible</td><td>Credible occurrence under foreseeable conditions.</td></tr>
+<tr><td>Likely</td><td>Expected to occur repeatedly or under common conditions.</td></tr>
+<tr><td>Almost certain</td><td>Frequent or highly predictable occurrence.</td></tr>
+</table>
+
+<h3>3.3 Hierarchy of controls</h3>
+<table>
+<tr><th>Level</th><th>Control</th><th>Example</th><th>General reliability</th></tr>
+<tr><td>1</td><td><b>Elimination</b></td><td>Remove the hazardous task entirely.</td><td>Highest</td></tr>
+<tr><td>2</td><td><b>Substitution</b></td><td>Replace a hazardous chemical with a safer alternative.</td><td>High</td></tr>
+<tr><td>3</td><td><b>Engineering</b></td><td>Guarding, enclosure, ventilation, interlock.</td><td>High</td></tr>
+<tr><td>4</td><td><b>Administrative</b></td><td>Procedure, training, scheduling, signage.</td><td>Moderate / variable</td></tr>
+<tr><td>5</td><td><b>PPE</b></td><td>Helmet, gloves, eye protection, respirator.</td><td>Last line</td></tr>
+</table>
+<div class="danger"><b>Common mistake:</b> “PPE is provided” is not the same as “the hazard is adequately controlled.” PPE depends on correct selection, fit, availability, use, maintenance and human behaviour.</div>
+
+<h3>3.4 Residual risk</h3>
+<p>After controls are implemented, some risk may remain. This is residual risk. A professional assessment states what remains, who accepts it, and what monitoring or further controls are required.</p>
+
+<h3>3.5 Dynamic risk assessment</h3>
+<p>Risk assessment is not always a document completed once. Conditions can change: weather, equipment condition, simultaneous operations, personnel, process state, access and emergency conditions can all alter risk.</p>
+</section>
+
+<section class="section" id="unit4">
+<h2>Unit IV — Safety Management</h2>
+<p class="lead">Move from individual hazards to systems that consistently control risk.</p>
+
+<h3>4.1 Safety management system</h3>
+<p>A management system links policy, planning, implementation, verification and improvement. A mature system does not depend on one enthusiastic safety officer.</p>
+<div class="grid2">
+<div class="card"><b>Leadership</b><p>Policy, accountability, resources and visible commitment.</p></div>
+<div class="card"><b>Planning</b><p>Hazard identification, objectives, legal requirements and risk controls.</p></div>
+<div class="card"><b>Implementation</b><p>Competence, communication, procedures, operational controls and emergency preparedness.</p></div>
+<div class="card"><b>Assurance</b><p>Inspection, audit, monitoring, incident learning and management review.</p></div>
+</div>
+
+<h3>4.2 Safety inspection vs safety audit</h3>
+<table>
+<tr><th>Inspection</th><th>Audit</th></tr>
+<tr><td>Usually focuses on physical conditions and operational compliance.</td><td>Examines whether a management system or defined requirements are systematically implemented.</td></tr>
+<tr><td>Often frequent and field-oriented.</td><td>Usually structured, evidence-based and broader.</td></tr>
+<tr><td>Example: inspect scaffolding.</td><td>Example: audit the scaffolding management system.</td></tr>
+</table>
+
+<h3>4.3 Toolbox talk</h3>
+<p>A toolbox talk should be short, task-specific and interactive. A strong structure is:</p>
+<ol>
+<li>Define today's task and location.</li>
+<li>Identify the main hazards.</li>
+<li>Explain critical controls.</li>
+<li>Discuss abnormal conditions and stop-work triggers.</li>
+<li>Confirm PPE and emergency arrangements.</li>
+<li>Ask workers to identify hazards you may have missed.</li>
+</ol>
+
+<h3>4.4 Permit-to-work concept</h3>
+<p>Permit-to-work systems control specified high-risk work by formally confirming prerequisites, isolations, precautions, responsibilities and authorisation. A permit is <b>not</b> itself a risk assessment and is not a substitute for competent planning.</p>
+
+<h3>4.5 Management of Change</h3>
+<p>Any change in equipment, material, process, software, operating envelope, staffing or procedure can introduce new hazards. MOC asks what is changing, why, what hazards arise, what safeguards are affected, whether drawings/procedures/training need updating, and who approves the change.</p>
+
+<h3>4.6 Safety performance indicators</h3>
+<div class="grid2">
+<div class="card"><b>Lagging indicators</b><p>Record outcomes after failure: injuries, fires, spills, property damage.</p></div>
+<div class="card"><b>Leading indicators</b><p>Measure preventive activity or barrier health: critical inspection completion, overdue actions, safety observations, emergency drill performance.</p></div>
+</div>
+</section>
+
+<section class="section" id="unit5">
+<h2>Unit V — Practical Safety</h2>
+<p class="lead">Now convert knowledge into field competence.</p>
+
+<h3>5.1 Workplace inspection method</h3>
+<ol>
+<li>Review previous incidents, risk assessments and open actions.</li>
+<li>Define the route and inspection scope.</li>
+<li>Observe work without immediately changing worker behaviour.</li>
+<li>Look at people, plant, process, environment and management controls.</li>
+<li>Record evidence: location, condition, exposure and possible consequence.</li>
+<li>Immediately address imminent serious danger according to site procedure.</li>
+<li>Assign corrective actions with owners and deadlines.</li>
+<li>Verify closure and effectiveness.</li>
+</ol>
+
+<h3>5.2 Writing a strong safety observation</h3>
+<div class="grid2">
+<div class="card"><b>Weak</b><p>“Housekeeping is poor.”</p></div>
+<div class="card"><b>Strong</b><p>“At the north access route, approximately 6 m of walkway was obstructed by hoses and scrap material, reducing clear pedestrian access. Remove materials and establish a designated hose route.”</p></div>
+</div>
+
+<h3>5.3 Corrective action quality</h3>
+<p>A weak action says “Tell workers to be careful.” A stronger action changes the system: redesign the access route, install a guard, eliminate the need to enter the hazard zone, revise the procedure, provide a suitable tool, or introduce verification.</p>
+
+<h3>5.4 Accident investigation</h3>
+<p>Protect life first, preserve evidence, control secondary hazards, identify witnesses and establish a factual timeline. Then analyse causal factors.</p>
+<div class="code">EVENT
+  ↓
+Immediate causes
+  ↓
+Contributing factors
+  ↓
+Underlying causes
+  ↓
+Organisational / system causes
+  ↓
+Corrective actions
+  ↓
+Effectiveness verification</div>
+
+<h3>5.5 Root cause analysis</h3>
+<p>“Why?” questions are useful but should not be used mechanically. Stop when you reach a controllable system weakness that, if corrected, would materially reduce the probability of recurrence.</p>
+<div class="note"><b>Important:</b> A root cause is not automatically the deepest sentence you can write. It is a causal factor that is actionable and meaningful for prevention.</div>
+</section>
+
+<section class="section" id="tools">
+<h2>Core professional tools</h2>
+<div class="grid2">
+<div class="card"><b>JSA / JHA</b><p>Task-level hazard analysis used before or during work planning.</p></div>
+<div class="card"><b>Risk Assessment</b><p>Structured evaluation of hazard, exposure, likelihood, consequence and controls.</p></div>
+<div class="card"><b>HAZID</b><p>Broad, multidisciplinary identification of hazards for facilities, projects or processes.</p></div>
+<div class="card"><b>HAZOP</b><p>Structured examination using guidewords such as No, More, Less, Reverse and Other than to identify process deviations and consequences.</p></div>
+<div class="card"><b>Bow-Tie</b><p>Maps causes on the left, top event in the centre, consequences on the right, with preventive and mitigative barriers.</p></div>
+<div class="card"><b>Permit-to-Work</b><p>Formal control for defined high-risk work and required precautions.</p></div>
+</div>
+
+<h3>Bow-Tie thinking</h3>
+<div class="code">THREATS → PREVENTIVE BARRIERS → TOP EVENT → MITIGATIVE BARRIERS → CONSEQUENCES
+
+Example:
+Flammable release
+→ isolation / containment / detection
+→ loss of containment
+→ gas detection / ESD / fire protection / emergency response
+→ fire / explosion / exposure</div>
+
+<h3>HAZOP guidewords — introductory level</h3>
+<table>
+<tr><th>Guideword</th><th>Meaning</th><th>Example deviation</th></tr>
+<tr><td>No / Not</td><td>Complete absence</td><td>No flow</td></tr>
+<tr><td>More</td><td>Quantitative increase</td><td>More pressure</td></tr>
+<tr><td>Less</td><td>Quantitative decrease</td><td>Less flow</td></tr>
+<tr><td>Reverse</td><td>Opposite direction</td><td>Reverse flow</td></tr>
+<tr><td>As well as</td><td>Additional material or condition</td><td>Water present with hydrocarbon</td></tr>
+<tr><td>Other than</td><td>Substitution / unexpected material</td><td>Wrong chemical introduced</td></tr>
+</table>
+</section>
+
+<section class="section" id="cases">
+<h2>Case studies — learn to think like an investigator</h2>
+
+<details open><summary>Case 1 — Worker slips on an oily floor</summary><div>
+<p><b>Initial finding:</b> Worker slipped near a pump.</p>
+<p><b>Weak conclusion:</b> “Worker was careless.”</p>
+<p><b>Better questions:</b> Where did the oil come from? Was there a leak? Why was it not detected? Was the drainage adequate? Was the pump maintained? Was the area inspected? Was there a spill-response system? Were previous leaks reported?</p>
+<p><b>Potential controls:</b> eliminate leak source, improve containment, redesign drainage, preventive maintenance, inspection criteria and rapid spill response.</p>
+</div></details>
+
+<details><summary>Case 2 — Forklift nearly strikes a pedestrian</summary><div>
+<p>Investigate route design, visibility, speed, pedestrian segregation, reversing alarms, mirrors, lighting, traffic rules, driver competence and delivery schedules. Do not assume training alone will solve a poorly designed traffic interface.</p>
+</div></details>
+
+<details><summary>Case 3 — Worker receives an electric shock</summary><div>
+<p>Establish the electrical state, isolation status, test-before-touch process, equipment condition, competence, permit requirements and whether the circuit was correctly identified. Consider upstream organisational causes if isolation was routinely bypassed.</p>
+</div></details>
+
+<details><summary>Case 4 — Repeated hand injuries from a machine</summary><div>
+<p>Repeated injuries are a strong signal that the existing control strategy is inadequate. Investigate guarding, interlocks, access requirements, production pressures, maintenance, machine design and whether workers are forced to reach into the danger zone.</p>
+</div></details>
+</section>
+
+<section class="section" id="field">
+<h2>Field exercises</h2>
+<p class="lead">Do these in a real or simulated workplace. Do not enter restricted or hazardous areas without authorisation and required controls.</p>
+<div class="checklist">
+<label><input type="checkbox" data-task> Conduct a 20-minute workplace hazard hunt.</label>
+<label><input type="checkbox" data-task> Identify at least 10 hazards and classify them.</label>
+<label><input type="checkbox" data-task> Perform a simple task-based JSA.</label>
+<label><input type="checkbox" data-task> Build a 5×5 qualitative risk matrix using defined criteria.</label>
+<label><input type="checkbox" data-task> Select controls using the hierarchy of controls.</label>
+<label><input type="checkbox" data-task> Write five high-quality safety observations.</label>
+<label><input type="checkbox" data-task> Conduct a five-minute toolbox talk.</label>
+<label><input type="checkbox" data-task> Investigate a fictional incident and create a timeline.</label>
+<label><input type="checkbox" data-task> Draw a bow-tie for a hazardous release.</label>
+<label><input type="checkbox" data-task> Perform a mock safety audit against a checklist.</label>
+<label><input type="checkbox" data-task> Review an SDS and identify key hazards and controls.</label>
+<label><input type="checkbox" data-task> Present one corrective action and defend why it is effective.</label>
+</div>
+</section>
+
+<section class="section" id="mastery">
+<h2>Mastery checklist</h2>
+<p>Don't call yourself competent because you finished reading. Use this list to test whether you can actually perform the task.</p>
+<div class="grid2">
+<div class="card"><b>Foundation</b><ul><li>Explain hazard, risk, incident and control.</li><li>Describe common accident causation models.</li><li>Explain why PPE is the last line of defence.</li></ul></div>
+<div class="card"><b>Identification</b><ul><li>Identify hazards from energy sources.</li><li>Identify exposed persons.</li><li>Recognise routine and non-routine hazards.</li></ul></div>
+<div class="card"><b>Assessment</b><ul><li>Conduct a task risk assessment.</li><li>Explain likelihood and consequence.</li><li>Choose controls in the correct hierarchy.</li></ul></div>
+<div class="card"><b>Management</b><ul><li>Differentiate inspection and audit.</li><li>Explain PTW and MOC.</li><li>Understand leading and lagging indicators.</li></ul></div>
+<div class="card"><b>Investigation</b><ul><li>Build a factual timeline.</li><li>Separate immediate and underlying causes.</li><li>Recommend effective corrective actions.</li></ul></div>
+<div class="card"><b>Communication</b><ul><li>Deliver a toolbox talk.</li><li>Write evidence-based observations.</li><li>Explain a control to a worker clearly.</li></ul></div>
+</div>
+<div class="success"><b>Mastery standard:</b> You should be able to walk into an unfamiliar workplace, identify credible hazards, explain who is exposed and how, judge which risks deserve priority, recommend controls using the hierarchy, document your findings and defend your reasoning.</div>
+</section>
+
+<section class="section" id="quiz">
+<h2>Assessment quiz</h2>
+<p class="lead">25 questions. Select an answer. Your score is calculated locally in your browser.</p>
+<div id="quizBox"></div>
+<button onclick="gradeQuiz()" style="background:#0b4f8a;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;cursor:pointer">Grade Quiz</button>
+<div id="score" class="success" style="display:none;margin-top:16px"></div>
+</section>
+
+<section class="section" id="glossary">
+<h2>Essential glossary</h2>
+<div class="flash">
+<div class="card"><b>ALARP</b><p>As Low As Reasonably Practicable; risk reduction principle used in some regulatory and organisational frameworks.</p></div>
+<div class="card"><b>Barrier</b><p>A measure that prevents an initiating event or limits its consequences.</p></div>
+<div class="card"><b>Competence</b><p>Combination of knowledge, skills, experience and behaviours required to perform safely.</p></div>
+<div class="card"><b>Exposure</b><p>Contact of a person with a hazard or hazardous agent.</p></div>
+<div class="card"><b>Hazard</b><p>Source or situation with potential for harm.</p></div>
+<div class="card"><b>Hierarchy of controls</b><p>Preferred order for reducing risk from elimination through PPE.</p></div>
+<div class="card"><b>Incident</b><p>Unwanted event that caused or could have caused harm or loss.</p></div>
+<div class="card"><b>JSA</b><p>Job Safety Analysis; breaks work into steps and identifies hazards and controls.</p></div>
+<div class="card"><b>MOC</b><p>Management of Change; structured control of changes that may affect risk.</p></div>
+<div class="card"><b>Near miss</b><p>Event with no actual harm but credible potential for harm.</p></div>
+<div class="card"><b>Residual risk</b><p>Risk remaining after controls are applied.</p></div>
+<div class="card"><b>Risk</b><p>Combination of likelihood and consequence associated with a hazard.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Where to go next</h2>
+<p class="lead">Once you can perform the fundamentals, continue into fire science and fire engineering. The same safety logic will then be applied to combustion, fire behaviour, protection systems and emergency response.</p>
+<div class="footer-nav"><a href="index.html">← Back to Study Hub</a><a href="#start">↑ Back to top</a></div>
+</section>
+</main>
+</div>
+
+<script>
+const questions=[
+["What is a hazard?","A source or situation with potential to cause harm",["A source or situation with potential to cause harm","Any accident that already happened","A safety policy","Only a chemical substance"]],
+["Risk is best described as:","A combination of likelihood and consequence",["A combination of likelihood and consequence","The same thing as a hazard","The number of workers on site","Only the financial cost"]],
+["Which is generally the strongest control?","Elimination",["PPE","Warning signs","Elimination","Training"]],
+["Why is PPE considered the last line of defence?","It depends strongly on correct human use and does not remove the hazard",["It is always ineffective","It depends strongly on correct human use and does not remove the hazard","It is illegal","It only protects equipment"]],
+["A near miss is:","An event with potential for harm but no actual harm",["An event with potential for harm but no actual harm","A minor injury","A planned drill","A maintenance activity"]],
+["Which is an engineering control?","Machine guarding",["Toolbox talk","Machine guarding","Safety poster","Disciplinary action"]],
+["Which question is most useful after identifying an unsafe act?","Why was the unsafe act possible or necessary in the work system?",["Who should be punished?","Why was the unsafe act possible or necessary in the work system?","Can we ignore it?","Who is the oldest worker?"]],
+["A safety observation should primarily be:","Factual and specific",["Emotional","Factual and specific","Anonymous and vague","As short as possible regardless of meaning"]],
+["JSA/JHA primarily analyses:","A defined job or task",["A company's annual profit","A country's laws","Only emergency response","Only PPE"]],
+["HAZOP commonly uses:","Guidewords and process deviations",["Only accident statistics","Guidewords and process deviations","Only PPE inspections","Only medical records"]],
+["A bow-tie analysis focuses on:","Threats, barriers, top event and consequences",["Payroll and attendance","Threats, barriers, top event and consequences","Only training records","Only fire extinguishers"]],
+["A permit-to-work system is:","A formal control for specified high-risk work",["A replacement for risk assessment","A formal control for specified high-risk work","A purchase order","A worker attendance sheet"]],
+["Management of Change is needed because:","Changes can introduce new hazards or weaken existing controls",["All changes are illegal","Changes can introduce new hazards or weaken existing controls","Only managers can change jobs","It is only for payroll"]],
+["A safety audit generally examines:","Systematic implementation against defined requirements",["Only housekeeping","Systematic implementation against defined requirements","Only worker behaviour","Only PPE condition"]],
+["A leading indicator is intended to show:","Preventive activity or barrier health",["Only injuries after they occur","Preventive activity or barrier health","Only production volume","Only salary costs"]],
+["A strong corrective action should:","Address the hazard or system weakness and be verified",["Tell workers to be careful","Address the hazard or system weakness and be verified","Close the report quickly","Avoid engineering changes"]],
+["Dynamic risk assessment recognises that:","Work conditions can change",["Risk never changes","Work conditions can change","Only supervisors face risk","Written documents are unnecessary"]],
+["Which is an unsafe condition?","A damaged guard on a machine",["A damaged guard on a machine","A worker reporting a hazard","A completed inspection","A toolbox talk"]],
+["Which is an energy hazard?","Stored pressure",["A notice board","Stored pressure","A meeting","A training certificate"]],
+["Residual risk means:","Risk remaining after controls are applied",["Risk before any assessment","Risk remaining after controls are applied","Only financial risk","A near miss"]],
+["A good incident investigation should first:","Protect people, control secondary hazards and preserve evidence",["Assign blame","Protect people, control secondary hazards and preserve evidence","Delete records","Restart production immediately"]],
+["A strong toolbox talk should be:","Task-specific and interactive",["Generic and identical every day","Task-specific and interactive","Only a reading exercise","Focused only on PPE"]],
+["Which control is usually stronger?","Engineering control",["A warning sign","Engineering control","A verbal reminder","A disciplinary threat"]],
+["What should happen after a corrective action is closed?","Its effectiveness should be verified",["Nothing","Its effectiveness should be verified","The hazard should be recreated","The report should be deleted"]],
+["The professional safety question is often:","What conditions and systems allowed this event to happen?",["Who can we blame?","What conditions and systems allowed this event to happen?","How can we hide the event?","How can we finish paperwork fastest?"]]
+];
+
+const box=document.getElementById("quizBox");
+questions.forEach((q,i)=>{
+  const d=document.createElement("div");d.className="quiz";
+  d.innerHTML=`<p>${i+1}. ${q[0]}</p>`+
+    q[2].map((o,j)=>`<button class="option" data-q="${i}" data-a="${j}" onclick="pick(this)">${String.fromCharCode(65+j)}. ${o}</button>`).join("")+
+    `<div class="answer" id="ans${i}">Correct answer: ${q[1]}</div>`;
+  box.appendChild(d);
+});
+function pick(btn){
+  const q=Number(btn.dataset.q);
+  document.querySelectorAll(`[data-q="${q}"]`).forEach(x=>x.classList.remove("wrong","correct"));
+  const a=Number(btn.dataset.a);
+  if(questions[q][2][a]===questions[q][1]) btn.classList.add("correct");
+  else btn.classList.add("wrong");
+  document.getElementById("ans"+q).classList.add("show");
+}
+function gradeQuiz(){
+  let score=0;
+  questions.forEach((q,i)=>{
+    const c=document.querySelector(`[data-q="${i}"].correct`);
+    if(c) score++;
+  });
+  const el=document.getElementById("score");
+  const pct=Math.round(score/questions.length*100);
+  el.style.display="block";
+  el.innerHTML=`<b>Score: ${score}/${questions.length} (${pct}%)</b><br>`+
+    (pct>=80?"Strong foundation. Move on, but keep practising in the field.":pct>=60?"Good start. Review the weak areas and retake the quiz.":"Do not rush forward. Revisit the units, then retake the quiz.");
+  el.scrollIntoView({behavior:"smooth",block:"center"});
+}
+const tasks=[...document.querySelectorAll("[data-task]")];
+function updateProgress(){
+  const done=tasks.filter(x=>x.checked).length;
+  const pct=Math.round(done/tasks.length*100);
+  document.getElementById("bar").style.width=pct+"%";
+  document.getElementById("progressText").textContent=pct+"% practical checklist completed";
+  localStorage.setItem("kunju-safety-01-progress",JSON.stringify(tasks.map(x=>x.checked)));
+}
+try{
+  const saved=JSON.parse(localStorage.getItem("kunju-safety-01-progress")||"[]");
+  tasks.forEach((x,i)=>x.checked=!!saved[i]);
+}catch(e){}
+tasks.forEach(x=>x.addEventListener("change",updateProgress));updateProgress();
+</script>
+</body>
+</html>
