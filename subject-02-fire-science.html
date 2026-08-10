@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fire Science & Fire Engineering — Kunju Study Hub</title>
+<style>
+:root{--ink:#080c11;--text:#18232e;--muted:#4d5d6d;--line:#d7dee6;--paper:#fff;--soft:#f3f6f9;--navy:#071522;--blue:#0b4f8a;--gold:#d89b00;--green:#087443;--red:#b42318}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#edf1f5;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:18px;line-height:1.75}
+a{color:var(--blue);font-weight:800}.top{position:sticky;top:0;z-index:20;background:#07111d;color:#fff;border-bottom:1px solid #26384b}.topin{max-width:1280px;margin:auto;padding:12px 20px;display:flex;align-items:center}.brand{font-weight:950}.brand small{display:block;color:#b8c8d8;font-size:12px;font-weight:650}.actions{margin-left:auto;display:flex;gap:8px}.actions a,.actions button{color:#fff;background:#102235;border:1px solid #3d5267;border-radius:9px;padding:7px 11px;font-size:13px;font-weight:850;text-decoration:none;cursor:pointer}
+.layout{max-width:1280px;margin:auto;padding:24px 20px 70px;display:grid;grid-template-columns:285px 1fr;gap:24px}
+aside{position:sticky;top:72px;height:calc(100vh - 92px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}aside h3{margin:0;font-size:16px;color:var(--ink)}aside a{display:block;color:#253342;text-decoration:none;font-size:14px;line-height:1.35;padding:8px;border-radius:8px}aside a:hover{background:#edf4fa}.progress{height:9px;background:#e2e7ed;border-radius:99px;margin:12px 0;overflow:hidden}.progress i{display:block;width:0;height:100%;background:var(--gold)}.small{font-size:13px;color:var(--muted);font-weight:650}
+.hero{background:linear-gradient(135deg,#06131f,#10466e);color:#fff;border-radius:20px;padding:34px;box-shadow:0 12px 35px rgba(10,20,30,.12);margin-bottom:24px}.kicker{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#ffd66a;font-weight:950}h1{font-size:clamp(37px,5vw,66px);line-height:1.03;letter-spacing:-1.7px;margin:10px 0 18px;color:#fff;font-weight:950}.hero p{font-size:20px;line-height:1.7;color:#e4edf5;max-width:920px;font-weight:550}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.stat{background:#102a41;border:1px solid #48637d;border-radius:12px;padding:13px}.stat b{display:block;font-size:22px;color:#fff}.stat span{font-size:12px;color:#c5d5e4;font-weight:650}
+.section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:22px;box-shadow:0 5px 20px rgba(20,30,40,.04)}
+h2{font-size:clamp(29px,4vw,43px);line-height:1.12;color:var(--ink);margin:0 0 12px;font-weight:950;letter-spacing:-.7px}h3{font-size:25px;line-height:1.2;color:var(--ink);margin:29px 0 10px;font-weight:900}h4{font-size:19px;color:#10283e;margin:22px 0 8px;font-weight:900}.lead{font-size:20px;color:#263747;font-weight:550}.note,.danger,.success{padding:16px 18px;border-radius:0 12px 12px 0;margin:18px 0}.note{background:#fff8df;border-left:6px solid var(--gold)}.danger{background:#fff0ef;border-left:6px solid var(--red)}.success{background:#edf9f3;border-left:6px solid var(--green)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{background:#fbfcfd;border:1px solid var(--line);border-radius:14px;padding:17px}.card b{color:var(--ink);font-weight:950}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:15px}th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left}th{background:#eaf0f5;color:#08131e;font-weight:950}
+details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff}summary{cursor:pointer;padding:15px 17px;color:var(--ink);font-size:18px;font-weight:900}details>div{padding:0 18px 17px}
+.formula{background:#f0f4f7;border:1px solid var(--line);padding:13px 16px;border-radius:11px;font-size:21px;font-weight:950;color:#07121d}.code{background:#101820;color:#e8f1f7;border-radius:11px;padding:16px;overflow:auto;font:14px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}
+.quiz{border:1px solid var(--line);border-radius:13px;background:#fbfcfd;padding:17px;margin:12px 0}.quiz p{font-weight:900;color:var(--ink)}.option{display:block;width:100%;text-align:left;border:1px solid #cbd4de;background:#fff;border-radius:9px;padding:10px 12px;margin:7px 0;cursor:pointer;color:#1c2935;font-weight:600}.option.correct{background:#e6f7ee;border-color:#42a875}.option.wrong{background:#fff0ef;border-color:#d86c64}.answer{display:none;margin-top:9px;font-weight:750}.answer.show{display:block}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}.checklist input{margin-top:7px;transform:scale(1.2)}
+.footer-nav{display:flex;justify-content:space-between;gap:10px}.footer-nav a{background:var(--blue);color:#fff;padding:11px 15px;border-radius:10px;text-decoration:none}
+@media(max-width:950px){.layout{grid-template-columns:1fr}aside{position:relative;top:auto;height:auto}.stats{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}}
+@media(max-width:620px){body{font-size:17px}.layout{padding:12px}.section,.hero{padding:21px}.grid2,.stats{grid-template-columns:1fr}.hero p{font-size:18px}.actions a,.actions button{font-size:11px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><div class="brand">KUNJU STUDY HUB<small>Diploma in Safety & Fire Engineering</small></div><div class="actions"><a href="index.html">← Study Hub</a><a href="#quiz">Quiz</a><button onclick="window.print()">Print</button></div></div></header>
+
+<div class="layout">
+<aside>
+<h3>Subject 02 Navigation</h3>
+<div class="progress"><i id="bar"></i></div><div class="small" id="pt">0% practical checklist</div><hr>
+<a href="#start">1. Start Here</a><a href="#outcomes">2. Learning Outcomes</a><a href="#fire">3. What Is Fire?</a><a href="#heat">4. Heat & Energy</a><a href="#combustion">5. Combustion</a><a href="#ignition">6. Ignition & Flammability</a><a href="#growth">7. Fire Development</a><a href="#smoke">8. Smoke & Toxic Products</a><a href="#classification">9. Fire Classification</a><a href="#behaviour">10. Fire Behaviour</a><a href="#extinguish">11. Extinguishment</a><a href="#scenarios">12. Fire Scenarios</a><a href="#practical">13. Practical Work</a><a href="#mastery">14. Mastery</a><a href="#quiz">15. Quiz</a><a href="#glossary">16. Glossary</a>
+</aside>
+
+<main>
+<section class="hero" id="start">
+<div class="kicker">Subject 02 • Fire science from first principles</div>
+<h1>Fire Science & Fire Engineering</h1>
+<p>Start with the physics and chemistry of fire, then build toward prediction, fire behaviour, extinguishment and engineering judgement. The objective is not to memorise the fire triangle—it is to understand why fires ignite, grow, spread, produce smoke and can be controlled.</p>
+<div class="stats"><div class="stat"><b>10</b><span>Core learning blocks</span></div><div class="stat"><b>50+</b><span>Fire-science concepts</span></div><div class="stat"><b>12</b><span>Practical exercises</span></div><div class="stat"><b>25</b><span>Mastery questions</span></div></div>
+</section>
+
+<section class="section" id="outcomes">
+<h2>Learning outcomes</h2><p class="lead">After completing this subject, you should be able to explain fire scientifically and use that understanding to make practical fire-safety decisions.</p>
+<div class="grid2">
+<div class="card"><b>Explain combustion</b><p>Describe fuel, oxidiser, heat, chemical reaction and the conditions required for sustained combustion.</p></div>
+<div class="card"><b>Analyse heat transfer</b><p>Explain conduction, convection and radiation and predict how each can contribute to fire spread.</p></div>
+<div class="card"><b>Interpret fuel properties</b><p>Use flash point, fire point, auto-ignition temperature and flammability limits correctly.</p></div>
+<div class="card"><b>Understand fire growth</b><p>Explain ignition, growth, fully developed burning, decay, flashover and backdraft concepts.</p></div>
+<div class="card"><b>Predict smoke hazards</b><p>Understand smoke production, movement, heat, visibility loss and toxic combustion products.</p></div>
+<div class="card"><b>Select extinguishment mechanisms</b><p>Connect cooling, smothering, oxygen reduction, chain-reaction interruption and fuel removal to agents and tactics.</p></div>
+</div>
+</section>
+
+<section class="section" id="fire">
+<h2>1. What is fire?</h2>
+<p class="lead">Fire is a rapid, exothermic oxidation process accompanied by heat and often light. Not every oxidation reaction produces a visible flame; the word “fire” usually refers to combustion occurring at a rate capable of producing significant thermal and/or radiant effects.</p>
+<div class="note"><b>Start with this:</b> Fire is not a substance. It is a process—a chemical reaction in which energy is released and can sustain further reaction.</div>
+<h3>1.1 The fire triangle</h3>
+<p>The traditional fire triangle contains three elements:</p>
+<div class="grid3"><div class="card"><b>Fuel</b><p>Material capable of undergoing combustion: solid, liquid vapour or gas.</p></div><div class="card"><b>Oxidiser</b><p>Usually oxygen from air, but some materials and processes can provide or release oxidising species.</p></div><div class="card"><b>Heat</b><p>Sufficient energy to raise fuel to ignition conditions and sustain the reaction.</p></div></div>
+<h3>1.2 The fire tetrahedron</h3>
+<p>The tetrahedron adds a fourth element: <b>the chemical chain reaction</b>. This helps explain why some extinguishing agents are effective even when they do not simply “remove oxygen”.</p>
+<div class="formula">Fuel + Oxidiser + Heat + Sustaining Chain Reaction → Sustained Combustion</div>
+<p>Extinguishment can therefore target one or more sides of this model: remove fuel, remove heat, reduce oxidiser availability, or interrupt the chemical reaction.</p>
+<h3>1.3 Fire versus oxidation</h3>
+<p>Oxidation can be slow, such as corrosion, or extremely rapid, such as an explosion. The rate of reaction strongly affects the observable behaviour and energy release.</p>
+</section>
+
+<section class="section" id="heat">
+<h2>2. Heat, temperature & energy</h2>
+<h3>2.1 Heat is not temperature</h3>
+<p><b>Temperature</b> describes the thermal state of a material. <b>Heat</b> is energy transferred because of a temperature difference. Confusing these concepts leads to poor fire analysis.</p>
+<h3>2.2 Heat transfer</h3>
+<table><tr><th>Mode</th><th>How it works</th><th>Fire example</th></tr>
+<tr><td><b>Conduction</b></td><td>Energy transfer through a material by molecular interaction.</td><td>A steel beam heated on one side transfers heat toward another area.</td></tr>
+<tr><td><b>Convection</b></td><td>Heat transported by moving fluids such as air and hot gases.</td><td>Hot smoke rises and carries heat through a building.</td></tr>
+<tr><td><b>Radiation</b></td><td>Electromagnetic energy transfer; no intervening medium is required.</td><td>A large fire radiates heat to nearby surfaces and can ignite them.</td></tr></table>
+<div class="success"><b>Fire-engineering habit:</b> When considering fire spread, ask separately: “Can heat travel through the structure?”, “Can hot gases move there?”, and “Can radiant heat reach the target?”</div>
+<h3>2.3 Heat flux</h3>
+<p>Radiant and convective exposure can be expressed as heat flux—energy received per unit area per unit time. High heat flux can cause ignition, painful exposure, material degradation or structural damage.</p>
+</section>
+
+<section class="section" id="combustion">
+<h2>3. Combustion science</h2>
+<p>Combustion involves chemical reactions between fuel and an oxidising species. For many common fires, the fuel must first produce vapour or gaseous decomposition products before flaming combustion can occur.</p>
+<h3>3.1 Solid fuels and pyrolysis</h3>
+<p>Many solids do not burn directly as a solid surface. Heating can cause <b>pyrolysis</b>: thermal decomposition that releases combustible gases and vapours. Those gases mix with oxygen and burn above the surface.</p>
+<div class="code">Solid fuel
+   ↓ heating
+Pyrolysis / decomposition
+   ↓
+Combustible vapours + gases
+   ↓ + oxygen + ignition source
+Flame
+   ↓
+Heat feedback to fuel
+   ↺ continued pyrolysis</div>
+<h3>3.2 Liquid fuels</h3>
+<p>Most liquid fires are fundamentally vapour fires. The liquid evaporates; the vapour mixes with air; the vapour-air mixture burns above the liquid surface. Temperature, vapour pressure, surface area and ventilation influence burning behaviour.</p>
+<h3>3.3 Gaseous fuels</h3>
+<p>A gas already exists in a potentially combustible form. The critical issue becomes concentration in air, mixing, ignition source and confinement. A released gas can form a flammable cloud before ignition.</p>
+<h3>3.4 Stoichiometry — introductory idea</h3>
+<p>Combustion can be represented by chemical equations. Complete combustion of a hydrocarbon ideally produces carbon dioxide and water, but real fires often produce carbon monoxide, soot and other products because mixing and oxygen availability are imperfect.</p>
+</section>
+
+<section class="section" id="ignition">
+<h2>4. Ignition, flash point & flammability</h2>
+<h3>4.1 Ignition</h3>
+<p>Ignition occurs when a fuel reaches conditions where the rate of heat generation and chemical reaction can support sustained combustion. An ignition source may be a flame, hot surface, spark, electrical arc, static discharge or other energy source.</p>
+<h3>4.2 Flash point</h3>
+<p>The <b>flash point</b> of a liquid is the lowest temperature at which it gives off enough vapour to form an ignitable mixture with air under specified test conditions. A flash point does not mean the liquid will necessarily sustain burning after the ignition source is removed.</p>
+<h3>4.3 Fire point</h3>
+<p>The <b>fire point</b> is a higher temperature at which vapour generation is sufficient to sustain combustion under the specified test conditions.</p>
+<h3>4.4 Auto-ignition temperature</h3>
+<p>The <b>auto-ignition temperature</b> is the approximate minimum temperature at which a substance can ignite in air without an external ignition source under specified conditions. It is not the same as flash point.</p>
+<h3>4.5 Flammable limits</h3>
+<p>A gas or vapour generally burns only when its concentration in air lies within a particular range:</p>
+<table><tr><th>LEL / LFL</th><td>Lower concentration boundary of the flammable range.</td></tr><tr><th>UEL / UFL</th><td>Upper concentration boundary of the flammable range.</td></tr></table>
+<div class="danger"><b>Critical distinction:</b> A mixture below the LEL is too lean to burn; a mixture above the UEL may be too rich to burn at that moment. A rich mixture can become dangerous as it mixes with air and moves into the flammable range.</div>
+<h3>4.6 Fire triangle versus flammability</h3>
+<p>Having fuel, oxygen and an ignition source does not guarantee burning. The fuel-air mixture must also be within the appropriate concentration and temperature conditions for the relevant combustion process.</p>
+</section>
+
+<section class="section" id="growth">
+<h2>5. Fire development</h2>
+<p>Fire behaviour depends on fuel arrangement, ventilation, geometry, heat feedback and suppression. A simple fire-growth model is useful, but real fires can deviate substantially.</p>
+<h3>5.1 Typical stages</h3>
+<div class="grid3"><div class="card"><b>Incipient</b><p>Ignition begins; energy release may initially be small.</p></div><div class="card"><b>Growth</b><p>Flame and heat release increase; nearby materials may ignite.</p></div><div class="card"><b>Fully developed</b><p>Large-scale burning occurs and heat release can become extreme.</p></div></div>
+<div class="grid2"><div class="card"><b>Decay</b><p>Fuel or oxygen becomes limiting and heat release decreases, although dangerous hot gases and smouldering can remain.</p></div><div class="card"><b>Flashover</b><p>A rapid transition to widespread involvement of combustible surfaces in a compartment as thermal conditions become severe.</p></div></div>
+<h3>5.2 Heat release rate</h3>
+<p><b>Heat release rate (HRR)</b> is one of the most important quantities in fire engineering. It describes how quickly a fire releases energy, commonly expressed in kW or MW.</p>
+<div class="formula">HRR is a measure of fire size in terms of energy released per unit time.</div>
+<p>A larger HRR generally means greater heat production, stronger convective flows, more smoke production and potentially faster fire growth.</p>
+<h3>5.3 Ventilation-controlled fires</h3>
+<p>In an enclosure, oxygen availability can limit burning. Opening a door or window can change the ventilation regime and may cause a dangerous increase in burning rate.</p>
+</section>
+
+<section class="section" id="smoke">
+<h2>6. Smoke & toxic fire products</h2>
+<p class="lead">For many occupants, smoke is the dominant immediate life-safety hazard in a building fire.</p>
+<h3>6.1 What smoke contains</h3>
+<p>Smoke is a complex mixture of hot gases, vapours, aerosols and particles. Composition varies with fuel, temperature and ventilation.</p>
+<div class="grid2"><div class="card"><b>Carbon monoxide (CO)</b><p>A toxic product of incomplete combustion; it can impair oxygen transport and cellular function.</p></div><div class="card"><b>Carbon dioxide (CO₂)</b><p>Produced during combustion and can contribute to hypercapnia and oxygen displacement at high concentrations.</p></div><div class="card"><b>Hydrogen cyanide (HCN)</b><p>Can be produced from nitrogen-containing materials and is highly toxic.</p></div><div class="card"><b>Smoke particulates</b><p>Can irritate the respiratory system, obscure vision and transport toxic substances.</p></div></div>
+<h3>6.2 Smoke movement</h3>
+<p>Hot smoke tends to rise because of buoyancy. It can form a hot upper layer beneath a ceiling and move through corridors, shafts, stairwells and other pathways. Pressure differences, wind and mechanical ventilation can strongly alter movement.</p>
+<div class="note"><b>Evacuation lesson:</b> Never assume that a corridor or stairwell is safe simply because flames are not visible. Smoke can precede the flame front and can make an escape route untenable.</div>
+</section>
+
+<section class="section" id="classification">
+<h2>7. Classification of fires</h2>
+<p>Fire classes are defined differently across standards and jurisdictions. Always use the classification system applicable to the equipment and authority having jurisdiction.</p>
+<table><tr><th>Common class</th><th>Typical fuel</th><th>Examples</th><th>Important consideration</th></tr>
+<tr><td><b>Class A</b></td><td>Ordinary combustible solids</td><td>Wood, paper, textiles</td><td>Deep-seated burning may require cooling and penetration.</td></tr>
+<tr><td><b>Class B</b></td><td>Flammable liquids</td><td>Petrol, solvents, paints</td><td>Spreading and vapour ignition are major concerns.</td></tr>
+<tr><td><b>Class C / gas classes</b></td><td>Flammable gases in systems using such classification</td><td>LPG, propane, methane</td><td>Control of fuel supply is critical.</td></tr>
+<tr><td><b>Electrical</b></td><td>Energised electrical equipment in systems that distinguish it</td><td>Panels, motors</td><td>Electrical isolation and suitable agents are critical.</td></tr>
+<tr><td><b>Cooking oil</b></td><td>High-temperature cooking oils/fats</td><td>Commercial fryers</td><td>Specialised extinguishing methods are required.</td></tr></table>
+<div class="danger"><b>Do not rely on class letters alone.</b> Fire-class terminology differs between standards. Read the extinguisher rating, follow local requirements and select an agent compatible with the actual hazard.</div>
+</section>
+
+<section class="section" id="behaviour">
+<h2>8. Fire behaviour</h2>
+<h3>8.1 Flashover</h3>
+<p>Flashover is a rapid transition during which exposed combustible surfaces in a compartment become involved as the upper gas layer and radiant environment reach severe conditions. It is a major survivability threshold.</p>
+<h3>8.2 Backdraft</h3>
+<p>Backdraft can occur when a ventilation-limited compartment contains hot, fuel-rich gases and oxygen is suddenly introduced. Rapid combustion can follow. The phenomenon is different from flashover, although both can be extremely dangerous.</p>
+<h3>8.3 Flame types</h3>
+<div class="grid3"><div class="card"><b>Diffusion flame</b><p>Fuel and oxidiser mix at or near the reaction zone. Many common fires behave this way.</p></div><div class="card"><b>Premixed flame</b><p>Fuel and oxidiser are mixed before ignition within appropriate concentration limits.</p></div><div class="card"><b>Smouldering</b><p>Flaming may be absent; slow surface or porous-material oxidation can still produce heat and toxic products.</p></div></div>
+<h3>8.4 Fire spread mechanisms</h3>
+<p>Fire can spread through direct flame contact, convection, radiation, conduction, flying brands/embers, burning liquids, hot gases and structural or service pathways.</p>
+</section>
+
+<section class="section" id="extinguish">
+<h2>9. Fire extinguishment</h2>
+<p class="lead">Every extinguishing tactic should make sense when mapped back to the fire tetrahedron.</p>
+<table><tr><th>Mechanism</th><th>What changes?</th><th>Examples</th></tr>
+<tr><td><b>Cooling</b></td><td>Removes heat faster than it is generated.</td><td>Water on suitable Class A fires.</td></tr>
+<tr><td><b>Smothering / oxygen reduction</b></td><td>Reduces oxidiser concentration at the reaction zone.</td><td>Foam blanket, inert gas in suitable systems.</td></tr>
+<tr><td><b>Fuel removal</b></td><td>Stops or reduces fuel supply.</td><td>Closing a gas valve, isolating a fuel line.</td></tr>
+<tr><td><b>Chain-reaction interruption</b></td><td>Interferes with chemical reactions sustaining flame.</td><td>Some dry chemical agents.</td></tr></table>
+<h3>9.1 Water</h3>
+<p>Water is highly effective for many ordinary combustibles because of its high heat capacity and latent heat of vaporisation. It is not automatically appropriate for every fire. Electrical hazards, water-reactive materials and certain flammable-liquid scenarios require careful agent selection.</p>
+<h3>9.2 Foam</h3>
+<p>Firefighting foams can form a blanket over suitable liquid fuels, suppress vapour release and provide cooling. Foam selection must match fuel type and application.</p>
+<h3>9.3 Carbon dioxide</h3>
+<p>CO₂ can displace oxygen locally and provides little residue, making it useful for certain enclosed electrical and flammable-liquid applications. It has limited cooling and can be ineffective against deep-seated Class A fires.</p>
+<h3>9.4 Dry chemical</h3>
+<p>Many dry chemical agents act primarily through flame chemistry interruption and can be effective for rapidly developing flame fires. They may provide limited cooling and may not prevent re-ignition where hot fuel remains.</p>
+</section>
+
+<section class="section" id="scenarios">
+<h2>10. Fire scenarios & engineering thinking</h2>
+<details open><summary>Scenario A — Waste-paper basket fire</summary><div><p>Likely fuel is Class A. Initial fire size may be small. Cooling is generally effective. The key engineering question is why ignition occurred and whether combustible accumulation, ignition sources or housekeeping controls are inadequate.</p></div></details>
+<details><summary>Scenario B — Petrol spill ignites</summary><div><p>Think vapour, surface area, ignition source, spread and re-ignition. Water application can be inappropriate if it spreads the liquid. Appropriate foam or dry chemical tactics depend on the specific situation, equipment and training.</p></div></details>
+<details><summary>Scenario C — LPG leak ignites</summary><div><p>The fire itself may be only one part of the hazard. Fuel isolation is critical. A leaking gas cylinder or vessel can continue feeding the flame and may create severe thermal exposure to the container.</p></div></details>
+<details><summary>Scenario D — Compartment fire with closed door</summary><div><p>Consider ventilation, hot gas accumulation, smoke movement and the possibility of rapid changes when an opening is made. Door opening is not a neutral action; it can change the fire's oxygen supply.</p></div></details>
+<details><summary>Scenario E — BLEVE concept</summary><div><p>A BLEVE is a boiling liquid expanding vapour explosion associated with a vessel containing a pressurised liquid exposed to conditions that cause vessel failure and rapid depressurisation. It can produce blast, projectiles and a fireball where combustible material is involved. Prevention depends strongly on vessel integrity, pressure control, separation and protection against severe external heating.</p></div></details>
+</section>
+
+<section class="section" id="practical">
+<h2>11. Practical & calculation exercises</h2>
+<div class="checklist">
+<label><input type="checkbox" data-task> Identify fuel, oxidiser, heat and chain-reaction elements for five fire scenarios.</label>
+<label><input type="checkbox" data-task> Demonstrate conduction, convection and radiation using safe classroom examples.</label>
+<label><input type="checkbox" data-task> Compare flash point and auto-ignition temperature for selected substances using SDS data.</label>
+<label><input type="checkbox" data-task> Interpret LEL and UEL values for a gas/vapour.</label>
+<label><input type="checkbox" data-task> Classify common workplace fire hazards using the applicable local standard.</label>
+<label><input type="checkbox" data-task> Select an appropriate extinguisher type for ten scenarios and justify the choice.</label>
+<label><input type="checkbox" data-task> Draw a compartment-fire development curve conceptually.</label>
+<label><input type="checkbox" data-task> Identify smoke movement paths in a building floor plan.</label>
+<label><input type="checkbox" data-task> Explain why a ventilation change can alter fire behaviour.</label>
+<label><input type="checkbox" data-task> Build a fire-tetrahedron analysis for a real workplace hazard.</label>
+<label><input type="checkbox" data-task> Conduct an extinguisher inspection using the manufacturer's/site checklist.</label>
+<label><input type="checkbox" data-task> Explain one fire scenario orally in five minutes without reading notes.</label>
+</div>
+<h3>Example calculation — heat energy</h3>
+<p>For introductory study, the sensible heat required to change temperature can be represented as:</p>
+<div class="formula">Q = m × c × ΔT</div>
+<p>where <b>Q</b> is heat energy, <b>m</b> is mass, <b>c</b> is specific heat capacity and <b>ΔT</b> is temperature change. In real fire engineering, phase changes, heat losses and changing material properties may need to be included.</p>
+</section>
+
+<section class="section" id="mastery">
+<h2>12. Mastery standard</h2>
+<div class="grid2">
+<div class="card"><b>Foundation</b><ul><li>Explain the fire triangle and tetrahedron.</li><li>Distinguish heat from temperature.</li><li>Explain the three heat-transfer modes.</li></ul></div>
+<div class="card"><b>Fuel science</b><ul><li>Explain pyrolysis.</li><li>Distinguish flash point, fire point and auto-ignition temperature.</li><li>Explain LEL and UEL.</li></ul></div>
+<div class="card"><b>Fire behaviour</b><ul><li>Describe growth and decay.</li><li>Explain flashover and backdraft.</li><li>Explain ventilation effects.</li></ul></div>
+<div class="card"><b>Smoke</b><ul><li>Explain why smoke is dangerous.</li><li>Identify important toxic products.</li><li>Predict basic smoke movement.</li></ul></div>
+<div class="card"><b>Extinguishment</b><ul><li>Map agents to mechanisms.</li><li>Recognise unsuitable agent applications.</li><li>Explain fuel isolation.</li></ul></div>
+<div class="card"><b>Engineering judgement</b><ul><li>Analyse a fire scenario from first principles.</li><li>Identify escalation pathways.</li><li>Defend a control or suppression choice.</li></ul></div>
+</div>
+<div class="success"><b>Mastery test:</b> Given an unfamiliar fire scenario, you should be able to identify the fuel, ignition mechanism, heat feedback, ventilation condition, likely fire behaviour, major exposures and the physical mechanism by which your proposed control or extinguishing method works.</div>
+</section>
+
+<section class="section" id="quiz">
+<h2>25-question mastery quiz</h2><p class="lead">Select one answer for each question, then grade the quiz.</p><div id="quizBox"></div><button onclick="gradeQuiz()" style="background:#0b4f8a;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;cursor:pointer">Grade Quiz</button><div id="score" class="success" style="display:none;margin-top:16px"></div>
+</section>
+
+<section class="section" id="glossary">
+<h2>Essential glossary</h2>
+<div class="grid3">
+<div class="card"><b>Auto-ignition temperature</b><p>Temperature at which ignition can occur without an external ignition source under specified conditions.</p></div>
+<div class="card"><b>Backdraft</b><p>Rapid combustion associated with sudden oxygen introduction into a hot, oxygen-depleted, fuel-rich enclosure.</p></div>
+<div class="card"><b>BLEVE</b><p>Boiling liquid expanding vapour explosion following failure of a vessel containing a pressurised liquid.</p></div>
+<div class="card"><b>Combustion</b><p>Exothermic chemical reaction involving fuel and an oxidising species.</p></div>
+<div class="card"><b>Flash point</b><p>Lowest temperature at which sufficient vapour is produced to form an ignitable mixture under specified test conditions.</p></div>
+<div class="card"><b>Flashover</b><p>Rapid transition to widespread involvement of combustible surfaces in a compartment.</p></div>
+<div class="card"><b>Heat release rate</b><p>Rate at which a fire releases energy, commonly expressed in kW or MW.</p></div>
+<div class="card"><b>LEL</b><p>Lower explosive/flammable limit of a gas or vapour in air.</p></div>
+<div class="card"><b>Pyrolysis</b><p>Thermal decomposition of material producing gases/vapours that may burn.</p></div>
+</div>
+</section>
+
+<section class="section"><h2>Next subject</h2><p class="lead">The next stage applies fire science to actual protection systems: extinguishers, hydrants, pumps, sprinklers, detection, alarms, passive fire protection and inspection.</p><div class="footer-nav"><a href="index.html">← Study Hub</a><a href="#start">↑ Back to top</a></div></section>
+</main>
+</div>
+
+<script>
+const qs=[
+["The fire tetrahedron adds which element to the traditional triangle?","Chemical chain reaction",["Fuel","Chemical chain reaction","Smoke","Pressure"]],
+["Which heat-transfer mode uses electromagnetic energy?","Radiation",["Conduction","Convection","Radiation","Evaporation"]],
+["Pyrolysis is best described as:","Thermal decomposition producing combustible vapours/gases",["Cooling a fuel","Thermal decomposition producing combustible vapours/gases","Removing oxygen","Freezing a liquid"]],
+["Flash point is:","The lowest temperature at which sufficient vapour can form an ignitable mixture under specified conditions",["The temperature at which every liquid burns continuously","The lowest temperature at which sufficient vapour can form an ignitable mixture under specified conditions","The same as auto-ignition temperature","The temperature of a flame"]],
+["Auto-ignition means ignition:","Without an external ignition source under specified conditions",["Only with a spark","Without an external ignition source under specified conditions","Only under water","Only in pure oxygen"]],
+["LEL represents:","The lower concentration boundary of the flammable range",["The highest safe temperature","The lower concentration boundary of the flammable range","The fire point","The oxygen concentration"]],
+["A liquid fire generally burns primarily from:","Vapour above the liquid surface",["The liquid core","Vapour above the liquid surface","The container wall","The bottom of the tank"]],
+["Which is an important fire-size parameter?","Heat release rate",["Flash point","Heat release rate","Smoke colour","Fuel density only"]],
+["Flashover is:","A rapid transition to widespread involvement of combustible surfaces in a compartment",["A gas leak","A water application technique","A rapid transition to widespread involvement of combustible surfaces in a compartment","A type of extinguisher"]],
+["Backdraft is associated with:","Sudden oxygen introduction into a hot, fuel-rich, ventilation-limited compartment",["A cold open field fire","Sudden oxygen introduction into a hot, fuel-rich, ventilation-limited compartment","Only electrical fires","Only liquid fires"]],
+["Which is a common toxic product of incomplete combustion?","Carbon monoxide",["Oxygen","Carbon monoxide","Helium","Nitrogen only"]],
+["Why can smoke be dangerous before flames reach an occupant?","Smoke and hot gases can move ahead of the flame front",["Smoke is always harmless","Smoke and hot gases can move ahead of the flame front","Smoke cannot move","Flames always move faster"]],
+["Conduction occurs mainly through:","A material",["A vacuum only","A material","A flame only","Sound waves"]],
+["Convection transfers heat through:","Moving fluids or gases",["Moving fluids or gases","Only solids","Only radiation","A vacuum only"]],
+["Radiant heat can travel:","Without direct contact and without a material medium",["Only through steel","Without direct contact and without a material medium","Only through water","Only through smoke"]],
+["Water commonly extinguishes Class A fires mainly through:","Cooling",["Cooling","Increasing fuel","Increasing heat","Creating a flammable vapour"]],
+["Foam can help control suitable liquid fires by:","Suppressing vapour release and providing a separating blanket",["Increasing evaporation","Suppressing vapour release and providing a separating blanket","Adding oxygen","Heating the fuel"]],
+["CO₂ extinguishing action is primarily associated with:","Oxygen displacement/dilution in the local fire zone",["Deep cooling of all solids","Oxygen displacement/dilution in the local fire zone","Fuel creation","Increasing ventilation"]],
+["Dry chemical agents can be effective because some:","Interrupt flame chemical reactions",["Create more oxygen","Interrupt flame chemical reactions","Increase heat release","Remove all smoke"]],
+["Which is a ventilation factor?","Availability and movement of air through openings",["Paint colour","Availability and movement of air through openings","Employee salary","Floor ownership"]],
+["A rich gas mixture above the UEL can become dangerous when:","It mixes with air and enters the flammable range",["It becomes colder than water","It mixes with air and enters the flammable range","It loses all fuel","It becomes solid"]],
+["A BLEVE involves:","Rapid vessel failure and expansion of a pressurised liquid/vapour system",["A normal sprinkler discharge","Rapid vessel failure and expansion of a pressurised liquid/vapour system","Only smoke movement","A detector alarm"]],
+["Which is an important first-principles question in a fire scenario?","What is the fuel and how is heat being fed back to it?",["Who owns the building?","What is the fuel and how is heat being fed back to it?","What colour is the extinguisher?","How old is the building?"]],
+["A ventilation change can:","Increase or alter burning by changing oxygen supply and flow paths",["Never affect fire behaviour","Increase or alter burning by changing oxygen supply and flow paths","Only reduce temperature","Only affect alarms"]],
+["The best way to select an extinguishing method is to:","Match the method to the fuel, fire behaviour, hazards and applicable procedures",["Always use water","Always use CO₂","Match the method to the fuel, fire behaviour, hazards and applicable procedures","Use the largest extinguisher available"]]
+];
+const box=document.getElementById("quizBox");
+qs.forEach((q,i)=>{const d=document.createElement("div");d.className="quiz";d.innerHTML=`<p>${i+1}. ${q[0]}</p>`+q[2].map((o,j)=>`<button class="option" data-q="${i}" data-a="${j}" onclick="pick(this)">${String.fromCharCode(65+j)}. ${o}</button>`).join("")+`<div class="answer" id="a${i}">Correct answer: ${q[1]}</div>`;box.appendChild(d)});
+function pick(b){const q=+b.dataset.q;document.querySelectorAll(`[data-q="${q}"]`).forEach(x=>x.classList.remove("correct","wrong"));const a=+b.dataset.a;if(qs[q][2][a]===qs[q][1])b.classList.add("correct");else b.classList.add("wrong");document.getElementById("a"+q).classList.add("show")}
+function gradeQuiz(){let s=0;qs.forEach((q,i)=>{if(document.querySelector(`[data-q="${i}"].correct`))s++});const p=Math.round(s/qs.length*100),e=document.getElementById("score");e.style.display="block";e.innerHTML=`<b>Score: ${s}/${qs.length} (${p}%)</b><br>${p>=80?"Strong fire-science foundation.":p>=60?"Good start. Review weak areas and try again.":"Review the material carefully before progressing."}`;e.scrollIntoView({behavior:"smooth",block:"center"})}
+const tasks=[...document.querySelectorAll("[data-task]")];function progress(){const d=tasks.filter(x=>x.checked).length,p=Math.round(d/tasks.length*100);document.getElementById("bar").style.width=p+"%";document.getElementById("pt").textContent=p+"% practical checklist";localStorage.setItem("kunju-fire-02",JSON.stringify(tasks.map(x=>x.checked)))}try{const s=JSON.parse(localStorage.getItem("kunju-fire-02")||"[]");tasks.forEach((x,i)=>x.checked=!!s[i])}catch(e){}tasks.forEach(x=>x.addEventListener("change",progress));progress();
+</script>
+</body>
+</html>
